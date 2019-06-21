@@ -17,11 +17,11 @@ public class LoginPage {
 
     public Elem emailFld = new Elem(By.cssSelector("#user"), "Login Field");
     public Elem passFld = new Elem(By.cssSelector("#password"), "Password Field");
-    public Elem loginBtn = new Elem(By.cssSelector("#login"), "Login button");
+    public Elem loginBtn = new Elem(By.cssSelector("#login"), "Login Button");
 
     public void open() {
         get(Constants.URL + PATH);
-        Assert.assertTrue(isOpened(), "Page Login {" + PATH + "] not opened");
+        Assert.assertTrue(isOpened(), "Page 'Login' [" + PATH + "] not Opened");
     }
 
     public boolean isOpened() {
@@ -29,9 +29,9 @@ public class LoginPage {
     }
 
     public void login(String email, String password) {
-
         emailFld.type(email);
         passFld.type(password);
+        loginBtn.click();
     }
 
 

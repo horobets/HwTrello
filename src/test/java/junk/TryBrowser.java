@@ -8,8 +8,11 @@ import org.testng.annotations.Test;
  */
 public class TryBrowser extends BrowserFactory {
 
+
     @Test
     public void openClose() {
-        driver().get("http://google.com");
+        driver().get("https://google.com");
     }
+
+
 }

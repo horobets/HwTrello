@@ -8,13 +8,15 @@ import org.openqa.selenium.By;
  */
 public class BoardsPage {
 
-    private static final String PATH = "loloktest4/boards";
+    private static final String PATH = "loliktest4/boards";
 
-    private Elem boardByUrlName(String urlName) {
-        return new Elem(By.cssSelector(".board-tile[href*=[" + urlName + "]"));
+
+    public Elem boardByUrlName(String urlName) {
+        return new Elem(By.cssSelector(".board-tile[href*='" + urlName + "']"), urlName);
     }
 
-    public void Open() {
+
+    public void open() {
 
     }
 
@@ -23,6 +25,8 @@ public class BoardsPage {
     }
 
     public void openBoard(String urlName) {
-        new Elem(By.cssSelector(".board-tile[href*=["))
+        boardByUrlName(urlName).click();
     }
+
+
 }

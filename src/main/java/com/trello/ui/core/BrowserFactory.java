@@ -2,6 +2,7 @@ package com.trello.ui.core;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,9 +14,8 @@ import org.testng.annotations.BeforeTest;
  */
 public class BrowserFactory {
 
-
-    private static WebDriver driver;
     private Logger logger = LoggerFactory.getLogger(BrowserFactory.class);
+    private static WebDriver driver;
 
     public static WebDriver driver() {
         return driver;
@@ -31,13 +31,20 @@ public class BrowserFactory {
 
     @BeforeTest
     public void setUp() {
-        driver = new ChromeDriver();
-        logger.info("Browser STARTED");
+        //driver = new ChromeDriver();
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--incognito");
+        driver = new ChromeDriver(options);
+
+        logger.info("BROWSER STARTED");
     }
 
     @AfterTest
     public void tearDown() {
         driver.quit();
-        logger.info("Browser CLOSED");
+        logger.info("BROWSER CLOSED");
+
     }
+
 }

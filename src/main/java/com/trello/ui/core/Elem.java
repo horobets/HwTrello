@@ -5,7 +5,6 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import static com.trello.ui.core.BrowserFactory.driver;
 import static com.trello.ui.core.BrowserFactory.getWebDriverWait;
 
 /**
@@ -25,8 +24,13 @@ public class Elem {
         this(by, "");
     }
 
+
+    public WebElement find() {
+        return getWebDriverWait(10).until(ExpectedConditions.presenceOfElementLocated(by));
+    }
+
     public void click() {
-        driver().findElement(by).click();
+        find().click();
     }
 
     public void type(String text) {
@@ -43,7 +47,5 @@ public class Elem {
         }
     }
 
-    public WebElement find() {
-        return getWebDriverWait(10).until(ExpectedConditions.presenceOfElementLocated(by));
-    }
+
 }

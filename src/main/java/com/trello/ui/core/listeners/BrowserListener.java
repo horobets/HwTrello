@@ -1,6 +1,5 @@
 package com.trello.ui.core.listeners;
 
-import com.trello.ui.core.BrowserFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
@@ -14,141 +13,140 @@ import org.slf4j.LoggerFactory;
  */
 public class BrowserListener implements WebDriverEventListener {
 
-
-    private Logger logger = LoggerFactory.getLogger(BrowserFactory.class);
+    private Logger logger = LoggerFactory.getLogger(BrowserListener.class);
 
     @Override
-    public void beforeAlertAccept(WebDriver webDriver) {
+    public void beforeAlertAccept(WebDriver driver) {
 
     }
 
     @Override
-    public void afterAlertAccept(WebDriver webDriver) {
+    public void afterAlertAccept(WebDriver driver) {
 
     }
 
     @Override
-    public void afterAlertDismiss(WebDriver webDriver) {
+    public void afterAlertDismiss(WebDriver driver) {
 
     }
 
     @Override
-    public void beforeAlertDismiss(WebDriver webDriver) {
+    public void beforeAlertDismiss(WebDriver driver) {
 
     }
 
     @Override
-    public void beforeNavigateTo(String s, WebDriver webDriver) {
+    public void beforeNavigateTo(String url, WebDriver driver) {
+        logger.info("Navigate: '" + url + "'");
+    }
+
+    @Override
+    public void afterNavigateTo(String url, WebDriver driver) {
 
     }
 
     @Override
-    public void afterNavigateTo(String s, WebDriver webDriver) {
+    public void beforeNavigateBack(WebDriver driver) {
 
     }
 
     @Override
-    public void beforeNavigateBack(WebDriver webDriver) {
+    public void afterNavigateBack(WebDriver driver) {
 
     }
 
     @Override
-    public void afterNavigateBack(WebDriver webDriver) {
+    public void beforeNavigateForward(WebDriver driver) {
 
     }
 
     @Override
-    public void beforeNavigateForward(WebDriver webDriver) {
+    public void afterNavigateForward(WebDriver driver) {
 
     }
 
     @Override
-    public void afterNavigateForward(WebDriver webDriver) {
+    public void beforeNavigateRefresh(WebDriver driver) {
 
     }
 
     @Override
-    public void beforeNavigateRefresh(WebDriver webDriver) {
+    public void afterNavigateRefresh(WebDriver driver) {
 
     }
 
     @Override
-    public void afterNavigateRefresh(WebDriver webDriver) {
+    public void beforeFindBy(By by, WebElement element, WebDriver driver) {
 
     }
 
     @Override
-    public void beforeFindBy(By by, WebElement webElement, WebDriver webDriver) {
+    public void afterFindBy(By by, WebElement element, WebDriver driver) {
 
     }
 
     @Override
-    public void afterFindBy(By by, WebElement webElement, WebDriver webDriver) {
+    public void beforeClickOn(WebElement element, WebDriver driver) {
 
     }
 
     @Override
-    public void beforeClickOn(WebElement webElement, WebDriver webDriver) {
+    public void afterClickOn(WebElement element, WebDriver driver) {
 
     }
 
     @Override
-    public void afterClickOn(WebElement webElement, WebDriver webDriver) {
+    public void beforeChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
 
     }
 
     @Override
-    public void beforeChangeValueOf(WebElement webElement, WebDriver webDriver, CharSequence[] charSequences) {
+    public void afterChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
 
     }
 
     @Override
-    public void afterChangeValueOf(WebElement webElement, WebDriver webDriver, CharSequence[] charSequences) {
+    public void beforeScript(String script, WebDriver driver) {
 
     }
 
     @Override
-    public void beforeScript(String s, WebDriver webDriver) {
+    public void afterScript(String script, WebDriver driver) {
 
     }
 
     @Override
-    public void afterScript(String s, WebDriver webDriver) {
+    public void beforeSwitchToWindow(String windowName, WebDriver driver) {
 
     }
 
     @Override
-    public void beforeSwitchToWindow(String s, WebDriver webDriver) {
+    public void afterSwitchToWindow(String windowName, WebDriver driver) {
 
     }
 
     @Override
-    public void afterSwitchToWindow(String s, WebDriver webDriver) {
+    public void onException(Throwable throwable, WebDriver driver) {
 
     }
 
     @Override
-    public void onException(Throwable throwable, WebDriver webDriver) {
+    public <X> void beforeGetScreenshotAs(OutputType<X> target) {
 
     }
 
     @Override
-    public <X> void beforeGetScreenshotAs(OutputType<X> outputType) {
+    public <X> void afterGetScreenshotAs(OutputType<X> target, X screenshot) {
 
     }
 
     @Override
-    public <X> void afterGetScreenshotAs(OutputType<X> outputType, X x) {
+    public void beforeGetText(WebElement element, WebDriver driver) {
 
     }
 
     @Override
-    public void beforeGetText(WebElement webElement, WebDriver webDriver) {
-
-    }
-
-    @Override
-    public void afterGetText(WebElement webElement, WebDriver webDriver, String s) {
+    public void afterGetText(WebElement element, WebDriver driver, String text) {
 
     }
 }

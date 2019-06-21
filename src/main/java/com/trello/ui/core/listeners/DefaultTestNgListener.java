@@ -8,38 +8,40 @@ import org.testng.ITestResult;
  * Created by horobets on Jun 20, 2019
  */
 public class DefaultTestNgListener implements ITestListener {
+
+
     @Override
-    public void onTestStart(ITestResult iTestResult) {
+    public void onTestStart(ITestResult result) {
 
     }
 
     @Override
-    public void onTestSuccess(ITestResult iTestResult) {
+    public void onTestSuccess(ITestResult result) {
 
     }
 
     @Override
-    public void onTestFailure(ITestResult iTestResult) {
+    public void onTestFailure(ITestResult result) {
 
     }
 
     @Override
-    public void onTestSkipped(ITestResult iTestResult) {
+    public void onTestSkipped(ITestResult result) {
 
     }
 
     @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
+    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 
     }
 
     @Override
-    public void onStart(ITestContext iTestContext) {
+    public void onStart(ITestContext context) {
 
     }
 
     @Override
-    public void onFinish(ITestContext iTestContext) {
+    public void onFinish(ITestContext context) {
 
     }
 }

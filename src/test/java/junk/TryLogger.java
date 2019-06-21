@@ -9,11 +9,11 @@ import org.testng.annotations.Test;
  */
 public class TryLogger {
 
-
     private Logger logger = LoggerFactory.getLogger(TryLogger.class);
 
     @Test
     public void asdasd() {
-        logger.info("saddasd");
+        logger.info("ASDASDASD");
     }
+
 }
