@@ -1,12 +1,21 @@
 package com.trello.api.models;
 
 public class Card {
+
     public String id;
     public String desc;
     public String idBoard;
     public String idList;
     public String name;
     public String url;
+
+    public Card() {
+    }
+
+    public Card(String name) {
+        this.name = name;
+    }
+
 
     @Override
     public String toString() {
@@ -19,4 +28,5 @@ public class Card {
                 ", url='" + url + '\'' +
                 '}';
     }
+
 }
