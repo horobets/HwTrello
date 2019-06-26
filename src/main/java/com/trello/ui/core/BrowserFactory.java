@@ -8,10 +8,15 @@ import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import java.util.HashSet;
+
 /**
  * Created by horobets on Jun 20, 2019
  */
 public class BrowserFactory {
+
+    protected HashSet<String> gsprefs = new HashSet<>();
+
 
     private Logger logger = LoggerFactory.getLogger(BrowserFactory.class);
     private static WebDriver driver;

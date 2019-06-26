@@ -31,6 +31,13 @@
 -->
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.github.mrmike/ok2curl -->
+        <dependency>
+            <groupId>com.github.mrmike</groupId>
+            <artifactId>ok2curl</artifactId>
+            <version>0.4.5</version>
+        </dependency>
+
 
         <!--for screenshots -->
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
@@ -76,11 +83,26 @@
         </dependency>
 
 
+
         <!-- Logger slf4j-log4j12-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.25</version>
+        </dependency>
+
+
+        <!--Allure TestNG-->
+        <dependency>
+            <groupId>ru.yandex.qatools.allure</groupId>
+            <artifactId>allure-testng-adaptor</artifactId>
+            <version>1.4.15</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>junit</artifactId>
+                    <groupId>junit</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
     </dependencies>
