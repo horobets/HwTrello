@@ -36,7 +36,8 @@ public class BoardPage extends TrelloBasePage {
         boardMenuPage.clickDelete();
         boardMenuPage.clickConfirm();
 
-        isElementPresent(boardEditingBy, 5);
+        isElementPresent(By.cssSelector(".little-message"), 5);
+
     }
 
     public boolean isMenuOpened() {

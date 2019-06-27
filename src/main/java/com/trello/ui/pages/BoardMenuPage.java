@@ -16,7 +16,7 @@ public class BoardMenuPage extends TrelloBasePage {
 
     @Override
     public boolean isOpened() {
-        return isElementPresent(boardMenuHeader, 2);
+        return isElementVisible(boardMenuHeader, 2);
     }
 
     public void clickMore() {
@@ -29,6 +29,7 @@ public class BoardMenuPage extends TrelloBasePage {
 
 
     public void clickDelete() {
+        isElementVisible(deleteLink, 5);
         click(deleteLink);
     }
 

@@ -2,6 +2,8 @@ package com.trello.ui.core;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,8 +37,25 @@ public class BrowserFactory {
 
     @BeforeSuite
     public void setUp() {
-        driver = new ChromeDriver();
-        logger.info("BROWSER STARTED");
+        //driver = new ChromeDriver();
+        //logger.info("BROWSER STARTED");
+
+
+        //System.setProperty("webdriver.chrome.driver", "C:/gswebDrivers/chromedriver.exe");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--incognito");
+        driver = new ChromeDriver(options);
+        //driver.manage().window().maximize();
+
+
+        //driver.manage().timeouts().pageLoadTimeout(0, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+
+        //driver.manage().timeouts().pageLoadTimeout(1, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+
+        driver = new EventFiringWebDriver(driver).register(new DriverEventListener());
     }
 
     @AfterSuite

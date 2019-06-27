@@ -24,17 +24,18 @@ public class CreateDeleteBoardTest extends TrelloBaseTest {
 
 
     @Parameters({"boardname"})
-    @Test(description = "Test trello delete board", priority = 9)
+    @Test(description = "Test trello delete board", priority = 9, invocationCount = 9)
     public void deleteBoard(@Optional("James Board") String boardname) {
 
         BoardsPage boardsPage = new BoardsPage();
-        boardsPage.openBoardsPage();
-        boardsPage.isOpened();
+        //boardsPage.openBoardsPage();
+        if (!boardsPage.isOpened())
+            boardsPage.openBoardsPage();
 
         BoardPage boardPage = boardsPage.openBoardByName(boardname);
         boardPage.deleteBoard();
 
-        boardPage.openBoardsPage().isOpened();
+        boardPage.openBoardsPage();
 
         Assert.assertFalse(boardsPage.isBoardListed(boardname));
     }

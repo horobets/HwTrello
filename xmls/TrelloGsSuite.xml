@@ -14,12 +14,12 @@
         <classes>
             <class name="regression.legacy.CreateDeleteBoardTest">
                 <methods>
-                    <exclude name="deleteBoard"></exclude>
+                    <exclude name="createBoard"></exclude>
                 </methods>
             </class>
         </classes>
     </test>
-
+    <!--
     <test name="Add to favorites and remove">
         <classes>
             <class name="regression.legacy.AddToFavoritesTest">
@@ -33,6 +33,7 @@
             </class>
         </classes>
     </test>
+     -->
     <!--   <test name="Change Position">
             <classes>
                 <class name="trello.ChangeCardPositionTest">
