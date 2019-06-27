@@ -79,5 +79,4 @@ public class LoginTest extends BrowserFactory {
         }
         return cookieValue;
     }
-
 }
