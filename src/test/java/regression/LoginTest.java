@@ -19,9 +19,7 @@ import java.io.IOException;
  */
 public class LoginTest extends BrowserFactory {
 
-
     protected final String credentialsStorageFilePath = "c:\\credentials\\trellocredentials.txt";
-
 
     TrelloRestClient client = new TrelloRestClient(cookies);
 
@@ -54,15 +52,11 @@ public class LoginTest extends BrowserFactory {
 
         client.authService.session(authResponseData.code, dsc).execute().body();
 
-        String token = getCookieValue("token");
-
-        Cookie authCookie1 = new Cookie("hasAccount", "password");
-        Cookie authCookie2 = new Cookie("token", token);
-
         driver().navigate().to("https://trello.com");
 
-        driver().manage().addCookie(authCookie1);
-        driver().manage().addCookie(authCookie2);
+        String token = getCookieValue("token");
+        Cookie authCookie = new Cookie("token", token);
+        driver().manage().addCookie(authCookie);
 
         driver().navigate().refresh();
 
@@ -79,5 +73,4 @@ public class LoginTest extends BrowserFactory {
         }
         return cookieValue;
     }
-
 }
