@@ -12,20 +12,19 @@ import java.util.HashSet;
 
 public class AddCookiesInterceptor implements Interceptor {
 
-    private HashSet<String> preferences;
+    private HashSet<String> cookies;
 
-    public AddCookiesInterceptor(HashSet<String> preferences) {
-        this.preferences = preferences;
+    public AddCookiesInterceptor(HashSet<String> cookies) {
+        this.cookies = cookies;
     }
 
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request.Builder builder = chain.request().newBuilder();
 
-        for (String cookie : preferences) {
+        for (String cookie : cookies) {
             builder.addHeader("Cookie", cookie);
-            //Log.v("OkHttp", "Adding Header: " + cookie); // This is done so I know which headers are being added; this interceptor is used after the normal logging of OkHttp
-            System.out.println("OkHttp" + "Adding Header: " + cookie); // This is done so I know which headers are being added; this interceptor is used after the normal logging of OkHttp
+            System.out.println("OkHttp " + "Adding Header: " + cookie);
         }
 
         return chain.proceed(builder.build());

@@ -15,7 +15,7 @@ import java.util.HashSet;
  */
 public class BrowserFactory {
 
-    protected HashSet<String> gsprefs = new HashSet<>();
+    protected HashSet<String> cookies = new HashSet<>();
 
 
     private Logger logger = LoggerFactory.getLogger(BrowserFactory.class);

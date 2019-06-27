@@ -23,7 +23,7 @@ public class LoginTest extends BrowserFactory {
     protected final String credentialsStorageFilePath = "c:\\credentials\\trellocredentials.txt";
 
 
-    TrelloRestClient client = new TrelloRestClient(gsprefs);
+    TrelloRestClient client = new TrelloRestClient(cookies);
 
     LoginPage loginPage = new LoginPage();
     BoardsPage boardsPage = new BoardsPage();
@@ -39,17 +39,17 @@ public class LoginTest extends BrowserFactory {
             username = trelloCredentials.getUsername();
             password = trelloCredentials.getPassword();
         }
-/*
+
+        /*
         loginPage.open();
         loginPage.login(username, password);
-        boardsPage.openBoard("jacksparrowtitle");
-*/
+        */
+
+        //API+Cookies Auth
 
         client.authService.homepage().execute();
 
         String dsc = getCookieValue("dsc");
-
-        driver().navigate().to("https://trello.com");
         AuthResponseData authResponseData = client.authService.authentication("password", username, password).execute().body();
 
         client.authService.session(authResponseData.code, dsc).execute().body();
@@ -57,18 +57,21 @@ public class LoginTest extends BrowserFactory {
         String token = getCookieValue("token");
 
         Cookie authCookie1 = new Cookie("hasAccount", "password");
-        driver().manage().addCookie(authCookie1);
         Cookie authCookie2 = new Cookie("token", token);
+
+        driver().navigate().to("https://trello.com");
+
+        driver().manage().addCookie(authCookie1);
         driver().manage().addCookie(authCookie2);
 
         driver().navigate().refresh();
 
-        System.out.println(authResponseData);
+        boardsPage.openBoard("jacksparrowtitle");
     }
 
     private String getCookieValue(String cookieName) {
         String cookieValue = "";
-        for (String s : gsprefs) {
+        for (String s : cookies) {
             if (s.startsWith(String.format("%s=", cookieName))) {
                 //dsc=6b5759f43105d69a69cd98f4b487e760f9c298a3e0c314e6c25b488f1e19ac7e; Path=/; Expires=Sat, 29 Jun 2019 20:45:32 GMT; Secure
                 cookieValue = s.substring(s.indexOf("=") + 1, s.indexOf(";"));
