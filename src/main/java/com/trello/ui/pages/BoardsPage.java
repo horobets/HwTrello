@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
  */
 public class BoardsPage {
 
-    private static final String PATH = "loliktest4/boards";
+    private static final String PATH = "serhiihorobets/boards";
 
 
     public Elem boardByUrlName(String urlName) {

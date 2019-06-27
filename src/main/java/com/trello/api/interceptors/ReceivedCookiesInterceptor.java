@@ -8,10 +8,10 @@ import java.util.HashSet;
 
 public class ReceivedCookiesInterceptor implements Interceptor {
 
-    private HashSet<String> preferences;
+    private HashSet<String> cookies;
 
-    public ReceivedCookiesInterceptor(HashSet<String> preferences) {
-        this.preferences = preferences;
+    public ReceivedCookiesInterceptor(HashSet<String> cookies) {
+        this.cookies = cookies;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class ReceivedCookiesInterceptor implements Interceptor {
                 cookies.add(header);
             }
 
-            preferences.addAll(cookies);
+            this.cookies.addAll(cookies);
         }
 
         return originalResponse;

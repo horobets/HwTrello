@@ -50,15 +50,15 @@ public class TrelloRestClient {
     }
 
 
-    public TrelloRestClient(HashSet<String> preferences) {
+    public TrelloRestClient(HashSet<String> cookies) {
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(20, TimeUnit.SECONDS)
                 .writeTimeout(20, TimeUnit.SECONDS)
                 .readTimeout(20, TimeUnit.SECONDS)
                 .addInterceptor(new TrelloAuthInterceptor())
                 .addInterceptor(new HTTPLogInterceptor())
-                .addInterceptor(new AddCookiesInterceptor(preferences))
-                .addInterceptor(new ReceivedCookiesInterceptor(preferences))
+                .addInterceptor(new AddCookiesInterceptor(cookies))
+                .addInterceptor(new ReceivedCookiesInterceptor(cookies))
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
