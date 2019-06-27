@@ -14,12 +14,13 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
+import static com.trello.ui.core.Constants.credentialsStorageFilePath;
+
 /**
  * Created by horobets on Jun 20, 2019
  */
 public class LoginTest extends BrowserFactory {
 
-    protected final String credentialsStorageFilePath = "c:\\credentials\\trellocredentials.txt";
 
     TrelloRestClient client = new TrelloRestClient(cookies);
 
@@ -48,6 +49,7 @@ public class LoginTest extends BrowserFactory {
         client.authService.homepage().execute();
 
         String dsc = getCookieValue("dsc");
+
         AuthResponseData authResponseData = client.authService.authentication("password", username, password).execute().body();
 
         client.authService.session(authResponseData.code, dsc).execute().body();
@@ -60,7 +62,7 @@ public class LoginTest extends BrowserFactory {
 
         driver().navigate().refresh();
 
-        boardsPage.openBoard("jacksparrowtitle");
+        boardsPage.openBoardByUrlName("jacksparrowtitle");
     }
 
     private String getCookieValue(String cookieName) {

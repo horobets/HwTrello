@@ -1,0 +1,43 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--<suite name="Trello Suite" parallel="tests">-->
+<suite name="Trello Suite">
+    <test name="Login">
+        <classes>
+            <class name="regression.legacy.LoginTests">
+                <methods>
+                    <exclude name="logout"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Create And Delete Board">
+        <classes>
+            <class name="regression.legacy.CreateDeleteBoardTest">
+                <methods>
+                    <exclude name="deleteBoard"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Add to favorites and remove">
+        <classes>
+            <class name="regression.legacy.AddToFavoritesTest">
+            </class>
+        </classes>
+    </test>
+
+    <test name="Change Board Visibility">
+        <classes>
+            <class name="regression.legacy.ChangeVisibilityTest">
+            </class>
+        </classes>
+    </test>
+    <!--   <test name="Change Position">
+            <classes>
+                <class name="trello.ChangeCardPositionTest">
+                </class>
+            </classes>
+        </test>
+        -->
+</suite>

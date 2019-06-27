@@ -5,8 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 import java.util.HashSet;
 
@@ -33,13 +33,13 @@ public class BrowserFactory {
         return new WebDriverWait(driver(), timeout);
     }
 
-    @BeforeTest
+    @BeforeSuite
     public void setUp() {
         driver = new ChromeDriver();
         logger.info("BROWSER STARTED");
     }
 
-    @AfterTest
+    @AfterSuite
     public void tearDown() {
         driver.quit();
         logger.info("BROWSER CLOSED");

@@ -2,12 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d6ddb49-22f5-42c5-9c48-3279a9313fb6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/trello/ui/core/BasePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/BoardMenuPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/BoardVisibility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/CreateBoardPopupPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/LoggedOutPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/TrelloBasePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/regression/legacy/AddToFavoritesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/regression/legacy/ChangeCardPositionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/regression/legacy/ChangeVisibilityTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/regression/legacy/CreateDeleteBoardTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/regression/legacy/LoginTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/regression/legacy/TrelloBaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xmls/TrelloGsSuite.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/trello/api/interceptors/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/trello/api/models/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/trello/api/services/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/trello/ui/core/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/.keep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/trello/api/interceptors/TrelloAuthInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/trello/api/interceptors/TrelloAuthInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/trello/ui/core/BrowserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/trello/ui/core/BrowserFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/trello/ui/core/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/trello/ui/core/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/BoardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/BoardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/BoardsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/BoardsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/regression/CardActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/regression/CardActions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/regression/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/regression/LoginTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,51 +38,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/regression/legacy/CreateDeleteBoardTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/regression/LoginTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/core/BasePage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="31" column="51" lean-forward="true" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/pages/BoardsPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#489#490#0" expanded="true" />
-                <element signature="e#536#537#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/core/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/api/interceptors/HTTPLogInterceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2091">
+            <state relative-caret-position="391">
+              <caret line="32" column="62" selection-start-line="32" selection-start-column="62" selection-end-line="32" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,28 +63,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/api/interceptors/AddCookiesInterceptor.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/regression/legacy/LoginTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+            <state relative-caret-position="221">
+              <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/api/interceptors/ReceivedCookiesInterceptor.java">
+        <entry file="file://$PROJECT_DIR$/xmls/TrelloGsSuite.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="77">
+              <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/regression/legacy/ChangeVisibilityTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/regression/legacy/AddToFavoritesTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/api/TrelloRestClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="52" column="51" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
+              <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,8 +110,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/core/BrowserFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="247">
+              <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/regression/legacy/TrelloBaseTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/regression/legacy/ChangeCardPositionTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -136,7 +158,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/trello/api/TrelloApiClient.java" />
         <option value="$PROJECT_DIR$/src/test/java/junk/TryBrowser.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/trello/api/interceptors/TrelloAuthInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/trello/api/services/CardsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/trello/api/services/BoardsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/trello/api/services/ListsService.java" />
@@ -147,21 +168,37 @@
         <option value="$PROJECT_DIR$/src/test/java/junk/TryLogger.java" />
         <option value="$PROJECT_DIR$/src/test/java/junk/TryTrelloApi.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/CardPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/regression/CardActions.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/trello/api/models/Card.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/trello/ui/core/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/trello/ui/core/credentialsstorage/ReadWriteTextFileLines.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/trello/api/models/AuthData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/trello/api/models/AuthResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/trello/api/services/AuthService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/trello/api/interceptors/HTTPLogInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/BoardsPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/trello/api/interceptors/ReceivedCookiesInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/trello/api/interceptors/AddCookiesInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/trello/ui/core/BrowserFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/trello/api/TrelloRestClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/trello/api/interceptors/TrelloAuthInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/trello/ui/core/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/trello/ui/core/TrelloBasePage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/BoardVisibility.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/CreateBoardPopupPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/LoggedOutPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/TrelloBasePage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/BoardMenuPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/BoardsPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/trello/ui/core/BasePage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/trello/ui/pages/BoardPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/regression/CardActions.java" />
         <option value="$PROJECT_DIR$/src/test/java/regression/LoginTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/regression/legacy/ChangeCardPositionTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/regression/legacy/ChangeVisibilityTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/regression/legacy/AddToFavoritesTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/regression/legacy/CreateDeleteBoardTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/regression/legacy/TrelloBaseTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/regression/legacy/LoginTests.java" />
+        <option value="$PROJECT_DIR$/xmls/TrelloGsSuite.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/trello/ui/core/BrowserFactory.java" />
       </list>
     </option>
   </component>
@@ -173,16 +210,18 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="829" />
-    <option name="y" value="-11" />
-    <option name="width" value="2535" />
-    <option name="height" value="1742" />
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -223,45 +262,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="trello" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HwTrello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HwTrello" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="trello" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="interceptors" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HwTrello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HwTrello" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="trello" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HwTrello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HwTrello" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="trello" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HwTrello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HwTrello" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="trello" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -288,13 +288,6 @@
               <item name="HwTrello" type="b2602c69:ProjectViewProjectNode" />
               <item name="HwTrello" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HwTrello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HwTrello" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -303,14 +296,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HwTrello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HwTrello" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="junk" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HwTrello" type="b2602c69:ProjectViewProjectNode" />
@@ -320,28 +305,44 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="regression" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="HwTrello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HwTrello" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="regression" type="462c0819:PsiDirectoryNode" />
+              <item name="legacy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HwTrello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HwTrello" type="462c0819:PsiDirectoryNode" />
+              <item name="xmls" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/trello/ui/core" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.trello.ui.pages" />
+      <recent name="com.trello.ui.core" />
       <recent name="com.trello.api.interceptors" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\GsDev\GitHub\HwTrello" />
+      <recent name="C:\GsDev\GitHub\HwTrello\src\test\java\regression\legacy" />
       <recent name="D:\Dev\GitHub\HwTrello\src\main\java\com\trello\ui\core" />
       <recent name="C:\GsDev\GitHub\HwTrello\src\main\java\com\trello\api\models" />
       <recent name="C:\GsDev\GitHub\HwTrello\src\main\java\com\trello\api\services" />
@@ -359,7 +360,34 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.LoginTest.login">
+  <component name="RunManager" selected="TestNG.C:/GsDev/GitHub/HwTrello/xmls/TrelloGsSuite.xml">
+    <configuration name="C:/GsDev/GitHub/HwTrello/xmls/TrelloGsSuite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="com.trello" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/xmls/TrelloGsSuite.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardActions" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="com.trello" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="regression.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="regression" />
+      <option name="MAIN_CLASS_NAME" value="regression.CardActions" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="com.trello" />
       <extension name="coverage">
@@ -395,35 +423,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TryBrowser.openClose" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTests.login" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="com.trello" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="junk.*" />
+          <option name="PATTERN" value="regression.legacy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="junk" />
-      <option name="MAIN_CLASS_NAME" value="junk.TryBrowser" />
-      <option name="METHOD_NAME" value="openClose" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TryLogger.asdasd" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="com.trello" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="junk.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="junk" />
-      <option name="MAIN_CLASS_NAME" value="junk.TryLogger" />
-      <option name="METHOD_NAME" value="asdasd" />
+      <option name="PACKAGE_NAME" value="regression.legacy" />
+      <option name="MAIN_CLASS_NAME" value="regression.legacy.LoginTests" />
+      <option name="METHOD_NAME" value="login" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -433,10 +443,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.C:/GsDev/GitHub/HwTrello/xmls/TrelloGsSuite.xml" />
+        <item itemvalue="TestNG.LoginTests.login" />
+        <item itemvalue="TestNG.CardActions" />
         <item itemvalue="TestNG.LoginTest.login" />
         <item itemvalue="TestNG.LoginTest" />
-        <item itemvalue="TestNG.TryBrowser.openClose" />
-        <item itemvalue="TestNG.TryLogger.asdasd" />
       </list>
     </recent_temporary>
   </component>
@@ -459,6 +470,7 @@
       <workItem from="1561476421861" duration="1968000" />
       <workItem from="1561574217993" duration="8964000" />
       <workItem from="1561616426795" duration="1813000" />
+      <workItem from="1561638467952" duration="6677000" />
     </task>
     <task id="LOCAL-00001" summary="moved to git - FirstCommit">
       <created>1560926920756</created>
@@ -527,27 +539,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LoginTest_login - 2019.06.26 at 23h 49m 51s.xml">
-      <configuration name="LoginTest.login" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="LoginTest_login - 2019.06.26 at 23h 53m 38s.xml">
-      <configuration name="LoginTest.login" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="LoginTest_login - 2019.06.27 at 00h 01m 42s.xml">
-      <configuration name="LoginTest.login" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="LoginTest_login - 2019.06.27 at 00h 02m 48s.xml">
-      <configuration name="LoginTest.login" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="LoginTest_login - 2019.06.27 at 00h 03m 37s.xml">
-      <configuration name="LoginTest.login" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="LoginTest_login - 2019.06.27 at 00h 05m 09s.xml">
-      <configuration name="LoginTest.login" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="LoginTest_login - 2019.06.27 at 09h 29m 29s.xml">
-      <configuration name="LoginTest.login" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="LoginTest_login - 2019.06.27 at 09h 32m 02s.xml">
       <configuration name="LoginTest.login" configurationId="TestNG" />
     </history-entry>
@@ -557,15 +548,36 @@
     <history-entry file="LoginTest_login - 2019.06.27 at 09h 48m 00s.xml">
       <configuration name="LoginTest.login" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="CardActions - 2019.06.27 at 15h 35m 03s.xml">
+      <configuration name="CardActions" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CardActions - 2019.06.27 at 15h 36m 47s.xml">
+      <configuration name="CardActions" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CardActions - 2019.06.27 at 15h 39m 46s.xml">
+      <configuration name="CardActions" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="LoginTests_login - 2019.06.27 at 18h 28m 13s.xml">
+      <configuration name="LoginTests.login" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="C__GsDev_GitHub_HwTrello_xmls_TrelloGsSuite_xml - 2019.06.27 at 18h 34m 21s.xml">
+      <configuration name="C:/GsDev/GitHub/HwTrello/xmls/TrelloGsSuite.xml" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="C__GsDev_GitHub_HwTrello_xmls_TrelloGsSuite_xml - 2019.06.27 at 18h 35m 29s.xml">
+      <configuration name="C:/GsDev/GitHub/HwTrello/xmls/TrelloGsSuite.xml" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="C__GsDev_GitHub_HwTrello_xmls_TrelloGsSuite_xml - 2019.06.27 at 18h 37m 19s.xml">
+      <configuration name="C:/GsDev/GitHub/HwTrello/xmls/TrelloGsSuite.xml" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21430000" />
+    <option name="totallyTimeSpent" value="28270000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26119402" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26385927" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -573,9 +585,9 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4951246" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.33044422" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -584,7 +596,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.25135428" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.19176598" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -649,9 +661,21 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/regression/LoginTest.java</url>
-          <line>62</line>
+          <line>64</line>
           <properties />
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/regression/CardActions.java</url>
+          <line>36</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/trello/ui/core/BasePage.java</url>
+          <line>32</line>
+          <properties />
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -708,48 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/core/Elem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
-            <element signature="e#556#557#0" expanded="true" />
-            <element signature="e#654#655#0" expanded="true" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#710#711#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/pages/BoardPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/pages/CardPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/regression/CardActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#880#881#0" expanded="true" />
-            <element signature="e#913#914#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/api/models/Card.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -776,17 +758,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/core/credentialsstorage/ReadWriteTextFileLines.java">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/pages/LoginPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#907#908#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/api/services/BoardsService.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -823,13 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/api/interceptors/TrelloAuthInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="24" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/junk/TryBrowser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -850,18 +814,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/api/services/AuthService.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/core/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -902,36 +858,251 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/pages/BoardsPage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/api/services/AuthService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+        <state relative-caret-position="68">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/api/interceptors/TrelloAuthInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="105" selection-start-line="14" selection-start-column="105" selection-end-line="14" selection-end-column="105" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#536#537#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/api/TrelloRestClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/core/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/pages/CardPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/core/Elem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#560#561#0" expanded="true" />
+            <element signature="e#658#659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/pages/BoardVisibility.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/pages/CreateBoardPopupPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding>
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/pages/LoggedOutPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding>
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/pages/LoginPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="17" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#807#808#0" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/pages/TrelloBasePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/pages/BoardMenuPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#600#601#0" expanded="true" />
+            <element signature="e#659#660#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#721#722#0" expanded="true" />
+            <element signature="e#758#759#0" expanded="true" />
+            <element signature="e#795#796#0" expanded="true" />
+            <element signature="e#829#830#0" expanded="true" />
+            <element signature="e#862#863#0" expanded="true" />
+            <element signature="e#896#897#0" expanded="true" />
+            <element signature="e#930#931#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/pages/BoardsPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#850#851#0" expanded="true" />
+            <element signature="e#897#898#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/pages/BoardPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#895#896#0" expanded="true" />
+            <element signature="e#953#954#0" expanded="true" />
+            <element signature="e#1386#1387#0" expanded="true" />
+            <element signature="e#1445#1446#0" expanded="true" />
+            <element signature="e#1576#1577#0" expanded="true" />
+            <element signature="e#1609#1610#0" expanded="true" />
+            <element signature="e#2066#2067#0" expanded="true" />
+            <element signature="e#2111#2112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/regression/CardActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/regression/LoginTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/regression/legacy/ChangeCardPositionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/regression/legacy/ChangeVisibilityTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/regression/legacy/AddToFavoritesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmls/TestNG.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmls/TrelloSuite.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/regression/legacy/LoginTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/core/BrowserFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="247">
+          <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/api/TrelloRestClient.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/regression/legacy/TrelloBaseTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="52" column="51" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
+        <state relative-caret-position="85">
+          <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/regression/LoginTest.java">
+    <entry file="file://$PROJECT_DIR$/xmls/TrelloGsSuite.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="31" column="51" lean-forward="true" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+        <state relative-caret-position="77">
+          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/regression/legacy/CreateDeleteBoardTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/trello/ui/core/BasePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="32" column="62" selection-start-line="32" selection-start-column="62" selection-end-line="32" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

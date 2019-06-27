@@ -3,6 +3,8 @@ package regression;
 import com.trello.api.TrelloRestClient;
 import com.trello.api.models.Card;
 import com.trello.ui.core.BrowserFactory;
+import com.trello.ui.core.credentialsstorage.Credentials;
+import com.trello.ui.core.credentialsstorage.CredentialsStorage;
 import com.trello.ui.pages.BoardsPage;
 import com.trello.ui.pages.CardPage;
 import com.trello.ui.pages.LoginPage;
@@ -12,6 +14,8 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.util.Date;
+
+import static com.trello.ui.core.Constants.credentialsStorageFilePath;
 
 public class CardActions extends BrowserFactory {
 
@@ -25,7 +29,7 @@ public class CardActions extends BrowserFactory {
 
     @BeforeTest
     public void prepareData() throws IOException {
-        card = client.cardsService.createCard("5d1243d7c2b5517f63f3a07a", card).execute().body();
+        card = client.cardsService.createCard("5d147de6ba27175a5e71cf72", card).execute().body();
     }
 
     @AfterTest
@@ -36,8 +40,15 @@ public class CardActions extends BrowserFactory {
     @Test
     public void login() {
         loginPage.open();
-        loginPage.login("loliktestintegration@gmail.com", "iLoveBieber");
-        // boardsPage.openBoard("jacksparrowtitle");
+        //loginPage.login("loliktestintegration@gmail.com", "iLoveBieber");
+
+        Credentials trelloCredentials = (new CredentialsStorage(credentialsStorageFilePath)).getLastCredentials();
+        String username = trelloCredentials.getUsername();
+        String password = trelloCredentials.getPassword();
+
+        loginPage.login(username, password);
+
+        boardsPage.openBoardByUrlName("jacksparrowtitle");
     }
 
     @Test
