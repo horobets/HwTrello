@@ -15,6 +15,7 @@
             <class name="regression.legacy.CreateDeleteBoardTest">
                 <methods>
                     <exclude name="createBoard"></exclude>
+                    <exclude name="deleteBoard"></exclude>
                 </methods>
             </class>
         </classes>
