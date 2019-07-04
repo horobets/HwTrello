@@ -20,6 +20,6 @@ public interface AuthService {
 
     @FormUrlEncoded
     @POST("https://trello.com/1/authorization/session")
-    Call<AuthResponseData> session(@Field("authentication") String authentication, @Field("dsc") String dsc);
+    Call<ResponseBody> session(@Field("authentication") String authentication, @Field("dsc") String dsc);
 
 }

@@ -5,4 +5,5 @@ package com.trello.ui.core;
  */
 public class Constants {
     public static final String URL = "https://trello.com/";
+    public static final String credentialsStorageFilePath = "c:\\credentials\\trellocredentials.txt";
 }

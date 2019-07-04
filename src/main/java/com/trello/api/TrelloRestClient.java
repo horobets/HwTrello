@@ -4,10 +4,7 @@ import com.trello.api.interceptors.AddCookiesInterceptor;
 import com.trello.api.interceptors.HTTPLogInterceptor;
 import com.trello.api.interceptors.ReceivedCookiesInterceptor;
 import com.trello.api.interceptors.TrelloAuthInterceptor;
-import com.trello.api.services.AuthService;
-import com.trello.api.services.BoardsService;
-import com.trello.api.services.CardsService;
-import com.trello.api.services.ListsService;
+import com.trello.api.services.*;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -23,6 +20,7 @@ public class TrelloRestClient {
     public BoardsService boardsService;
     public ListsService listsService;
     public CardsService cardsService;
+    public LabelsService labelsService;
 
     public AuthService authService;
 
@@ -45,6 +43,7 @@ public class TrelloRestClient {
         boardsService = retrofit.create(BoardsService.class);
         listsService = retrofit.create(ListsService.class);
         cardsService = retrofit.create(CardsService.class);
+        labelsService = retrofit.create(LabelsService.class);
 
         authService = retrofit.create(AuthService.class);
     }
@@ -70,6 +69,7 @@ public class TrelloRestClient {
         boardsService = retrofit.create(BoardsService.class);
         listsService = retrofit.create(ListsService.class);
         cardsService = retrofit.create(CardsService.class);
+        labelsService = retrofit.create(LabelsService.class);
 
         authService = retrofit.create(AuthService.class);
     }

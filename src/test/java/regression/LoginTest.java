@@ -7,6 +7,9 @@ import com.trello.ui.core.credentialsstorage.Credentials;
 import com.trello.ui.core.credentialsstorage.CredentialsStorage;
 import com.trello.ui.pages.BoardsPage;
 import com.trello.ui.pages.LoginPage;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Step;
 import org.openqa.selenium.Cookie;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -14,12 +17,16 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
+import static com.trello.ui.core.Constants.credentialsStorageFilePath;
+
 /**
  * Created by horobets on Jun 20, 2019
  */
+
+@Epic("Regression")
+@Feature("LOGIN")
 public class LoginTest extends BrowserFactory {
 
-    protected final String credentialsStorageFilePath = "c:\\credentials\\trellocredentials.txt";
 
     TrelloRestClient client = new TrelloRestClient(cookies);
 
@@ -48,6 +55,7 @@ public class LoginTest extends BrowserFactory {
         client.authService.homepage().execute();
 
         String dsc = getCookieValue("dsc");
+
         AuthResponseData authResponseData = client.authService.authentication("password", username, password).execute().body();
 
         client.authService.session(authResponseData.code, dsc).execute().body();
@@ -60,9 +68,10 @@ public class LoginTest extends BrowserFactory {
 
         driver().navigate().refresh();
 
-        boardsPage.openBoard("jacksparrowtitle");
+        boardsPage.openBoardByUrlName("jacksparrowtitle");
     }
 
+    @Step
     private String getCookieValue(String cookieName) {
         String cookieValue = "";
         for (String s : cookies) {
