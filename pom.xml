@@ -9,6 +9,15 @@
     <version>1.0-SNAPSHOT</version>
 
 
+    <properties>
+        <buildDirectory>${project.basedir}/target</buildDirectory>
+        <allure.results.directory>${buildDirectory}/allure-results</allure.results.directory>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <allure.version>2.12.1</allure.version>
+        <aspectj.version>1.8.3</aspectj.version>
+        <suite>xmls/TrelloGsSuite.xml</suite>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -19,6 +28,32 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.20</version>
+                <configuration>
+                    <argLine>
+                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
+                    </argLine>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suite}</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <systemPropertyVariables>
+                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                    </systemPropertyVariables>
+                </configuration>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
         </plugins>
     </build>
 
@@ -32,11 +67,11 @@
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.github.mrmike/ok2curl -->
-        <dependency>
+        <!--<dependency>
             <groupId>com.github.mrmike</groupId>
             <artifactId>ok2curl</artifactId>
             <version>0.4.5</version>
-        </dependency>
+        </dependency>-->
 
 
         <!--for screenshots -->
@@ -112,6 +147,36 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-email</artifactId>
+            <version>1.5</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.0</version>
+        </dependency>
+
+
+        <dependency>
+            <!-- jsoup HTML parser library @ https://jsoup.org/ -->
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.12.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+
 
     </dependencies>
 

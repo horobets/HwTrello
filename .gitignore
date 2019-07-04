@@ -23,4 +23,8 @@
 hs_err_pid*
 
 # Gs
-*.allure
+target
+.DS_Store
+.idea
+allure-report
+allure-results

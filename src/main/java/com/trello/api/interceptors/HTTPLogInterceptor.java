@@ -1,7 +1,8 @@
 package com.trello.api.interceptors;
 
-import com.moczul.ok2curl.CurlBuilder;
-import com.moczul.ok2curl.Options;
+///import com.moczul.ok2curl.CurlBuilder;
+///import com.moczul.ok2curl.Options;
+
 import okhttp3.*;
 import okio.Buffer;
 import org.slf4j.Logger;
@@ -11,7 +12,6 @@ import ru.yandex.qatools.allure.annotations.Attachment;
 import java.io.EOFException;
 import java.io.IOException;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -68,8 +68,8 @@ public class HTTPLogInterceptor implements Interceptor {
         Headers headers = request.headers();
         RequestBody body = request.body();
 
-        String curl = new CurlBuilder(request.newBuilder().build(), 1024L * 1024L, new ArrayList<>(), Options.EMPTY).build();
-        sb.append("cURL: \n" + curl + "\n");
+        ///String curl = new CurlBuilder(request.newBuilder().build(), 1024L * 1024L, new ArrayList<>(), Options.EMPTY).build();
+        ///sb.append("cURL: \n" + curl + "\n");
 
         //START
         sb.append("REQUEST LOG");

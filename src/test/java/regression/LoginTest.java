@@ -7,6 +7,9 @@ import com.trello.ui.core.credentialsstorage.Credentials;
 import com.trello.ui.core.credentialsstorage.CredentialsStorage;
 import com.trello.ui.pages.BoardsPage;
 import com.trello.ui.pages.LoginPage;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Step;
 import org.openqa.selenium.Cookie;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -19,6 +22,9 @@ import static com.trello.ui.core.Constants.credentialsStorageFilePath;
 /**
  * Created by horobets on Jun 20, 2019
  */
+
+@Epic("Regression")
+@Feature("LOGIN")
 public class LoginTest extends BrowserFactory {
 
 
@@ -65,6 +71,7 @@ public class LoginTest extends BrowserFactory {
         boardsPage.openBoardByUrlName("jacksparrowtitle");
     }
 
+    @Step
     private String getCookieValue(String cookieName) {
         String cookieValue = "";
         for (String s : cookies) {
