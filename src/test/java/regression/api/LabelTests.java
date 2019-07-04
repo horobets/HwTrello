@@ -66,9 +66,7 @@ public class LabelTests {
     public void addLabelToCard() throws IOException {
 
         Response response = client.cardsService.addIdLabel(testCardId, testLabelId).execute();
-
         Card card = client.cardsService.getCard(this.testCardId).execute().body();
-
         Assert.assertEquals(card.labels[0].name, testLabelName, "Invalid label on card");
     }
 
