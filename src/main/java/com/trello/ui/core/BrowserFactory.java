@@ -41,7 +41,7 @@ public class BrowserFactory {
         //logger.info("BROWSER STARTED");
 
 
-        //System.setProperty("webdriver.chrome.driver", "C:/gswebDrivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/webdrivers/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
         driver = new ChromeDriver(options);
