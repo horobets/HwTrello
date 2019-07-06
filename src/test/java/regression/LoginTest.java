@@ -10,6 +10,7 @@ import com.trello.ui.pages.LoginPage;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
+import io.qameta.allure.Story;
 import org.openqa.selenium.Cookie;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -23,7 +24,7 @@ import static com.trello.ui.core.Constants.credentialsStorageFilePath;
  * Created by horobets on Jun 20, 2019
  */
 
-@Epic("Regression")
+@Epic("REGRESSION")
 @Feature("LOGIN")
 public class LoginTest extends BrowserFactory {
 
@@ -33,6 +34,7 @@ public class LoginTest extends BrowserFactory {
     LoginPage loginPage = new LoginPage();
     BoardsPage boardsPage = new BoardsPage();
 
+    @Story("Login By Regular User: JackSparrow")
     @Parameters({"username", "password"})
     @Test(description = "Test trello login screen")
     public void login(@Optional("") String username,

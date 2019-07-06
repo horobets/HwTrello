@@ -1,6 +1,5 @@
 package imap;
 
-import org.apache.commons.io.IOUtils;
 
 import javax.mail.*;
 import javax.mail.search.SearchTerm;
@@ -177,25 +176,7 @@ public class ImapClient extends Imap {
             System.err.println("Error: " + "Failed to delete messages, store is not connected");
     }
 
-    public String getContent(Message message) {
-        if (isConnected()) {
-            try {
-                Object body = message.getContent();
-                if (body instanceof Multipart) {
-                    Multipart multipart = (Multipart) message.getContent();
-                    BodyPart bodyPart = multipart.getBodyPart(1);
-                    return IOUtils.toString(bodyPart.getInputStream(), "UTF-8");
-                } else {
-                    return body.toString();
-                }
-            } catch (Exception e) {
-                System.out.println("Warning: " + e.getMessage());
-            }
-        }
-        System.err.println("Error: "
-                + "Failed to get message content, store is not connected");
-        return "none";
-    }
+
 
     public String getHeader(Message message, String header) {
         if (isConnected()) {
@@ -312,7 +293,7 @@ public class ImapClient extends Imap {
             spamFolderName = "Junk";
         } else if (email.contains("gmail") || email.contains("onthe.io")) {
             host = "imap.gmail.com";
-            spamFolderName = "[Gmail]/Spam";
+            spamFolderName = "Spam";
         } else if (email.contains("yahoo")) {
             host = "imap.mail.yahoo.com";
             spamFolderName = "Bulk Mail";

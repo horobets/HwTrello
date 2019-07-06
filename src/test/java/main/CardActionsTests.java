@@ -1,4 +1,4 @@
-package regression;
+package main;
 
 import com.trello.api.TrelloRestClient;
 import com.trello.api.models.Board;
@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
+import regression.LoginTest;
 
 import java.io.IOException;
 import java.util.Date;
