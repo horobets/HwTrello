@@ -7,12 +7,13 @@ import okhttp3.*;
 import okio.Buffer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.yandex.qatools.allure.annotations.Attachment;
 
 import java.io.EOFException;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.concurrent.TimeUnit;
+
+///import ru.yandex.qatools.allure.annotations.Attachment;
 
 /**
  * Created by lolik on 11.01.19.
@@ -48,7 +49,7 @@ public class HTTPLogInterceptor implements Interceptor {
         }
     }
 
-    @Attachment(value = "{0}", type = "text/plain")
+    ///    @Attachment(value = "{0}", type = "text/plain")
     public static String txtAttachment(String name, String text) {
         return text;
     }

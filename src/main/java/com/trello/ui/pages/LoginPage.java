@@ -2,6 +2,7 @@ package com.trello.ui.pages;
 
 import com.trello.ui.core.Constants;
 import com.trello.ui.core.Elem;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -19,6 +20,7 @@ public class LoginPage {
     public Elem passFld = new Elem(By.cssSelector("#password"), "Password Field");
     public Elem loginBtn = new Elem(By.cssSelector("#login"), "Login Button");
 
+    @Step("Open Page: " + PATH)
     public void open() {
         get(Constants.URL + PATH);
         Assert.assertTrue(isOpened(), "Page 'Login' [" + PATH + "] not Opened");
@@ -28,6 +30,7 @@ public class LoginPage {
         return loginBtn.isPresent() && driver().getCurrentUrl().equals(Constants.URL + PATH);
     }
 
+    @Step
     public void login(String email, String password) {
         emailFld.type(email);
         passFld.type(password);
