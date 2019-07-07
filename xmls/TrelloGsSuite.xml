@@ -1,15 +1,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Trello">
+<!--<suite name="Trello">
     <test name="Login">
         <classes>
             <class name="main.CardActionsTests"></class>
         </classes>
     </test>
-</suite>
+</suite>-->
 
 <!--<suite name="Trello Suite" parallel="tests">-->
 
-        <!--<suite name="Trello Suite">
+        <suite name="Trello Suite">
             <test name="Login">
                 <classes>
                     <class name="regression.legacy.LoginTests">
@@ -28,7 +28,7 @@
                         </methods>
                     </class>
                 </classes>
-            </test>-->
+            </test>
 
     <!--
     <test name="Add to favorites and remove">
