@@ -9,7 +9,7 @@
 
 <!--<suite name="Trello Suite" parallel="tests">-->
 
-        <suite name="Trello Suite">
+        <suite name="Trello Gs Suite">
             <test name="Login">
                 <classes>
                     <class name="regression.legacy.LoginTests">
