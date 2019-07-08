@@ -12,7 +12,7 @@ import static com.trello.ui.core.BrowserFactory.get;
 /**
  * Created by horobets on Jun 20, 2019
  */
-public class LoginPage {
+public class LoginPage extends TrelloBasePage {
 
     private static final String PATH = "login";
 
@@ -26,6 +26,7 @@ public class LoginPage {
         Assert.assertTrue(isOpened(), "Page 'Login' [" + PATH + "] not Opened");
     }
 
+    @Override
     public boolean isOpened() {
         return loginBtn.isPresent() && driver().getCurrentUrl().equals(Constants.URL + PATH);
     }

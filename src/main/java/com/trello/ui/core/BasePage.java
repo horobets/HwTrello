@@ -45,18 +45,18 @@ public abstract class BasePage {
     }
 
     public void selectItem(By dropdownElement, String itemText) {
-        Select genderDropdown = new Select(driver().findElement(dropdownElement));
+        Select dropdown = new Select(driver().findElement(dropdownElement));
         //try {
-        genderDropdown.selectByVisibleText(itemText);
+        dropdown.selectByVisibleText(itemText);
         /*} catch (NoSuchElementException ex) {
             System.err.printf("Can't select an item: %s %n", itemText);
         }*/
     }
 
     public void selectItem(By dropdownElement, int itemIndex) {
-        Select genderDropdown = new Select(driver().findElement(dropdownElement));
+        Select dropdown = new Select(driver().findElement(dropdownElement));
         //try {
-        genderDropdown.selectByIndex(itemIndex);
+        dropdown.selectByIndex(itemIndex);
         /*} catch (NoSuchElementException ex) {
             System.err.printf("Can't select an item: %s %n", itemText);
         }*/

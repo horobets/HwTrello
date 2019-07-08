@@ -2,7 +2,7 @@
 <!--<suite name="Trello">
     <test name="Login">
         <classes>
-            <class name="main.CardActionsTests"></class>
+            <class name="tasks.CardActionsTests"></class>
         </classes>
     </test>
 </suite>-->

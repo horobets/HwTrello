@@ -1,4 +1,4 @@
-package main;
+package tasks;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -37,7 +37,7 @@ public class TrelloApiAuth extends BrowserFactory {
                       @Optional("") String password) throws IOException {
 
         //use credentialsstorage if no credentials provided
-        if (username.isEmpty() || password.isEmpty()) {
+        if (username.isEmpty() && password.isEmpty()) {
             Credentials trelloCredentials = (new CredentialsStorage(credentialsStorageFilePath)).getLastCredentials();
             username = trelloCredentials.getUsername();
             password = trelloCredentials.getPassword();

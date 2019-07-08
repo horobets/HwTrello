@@ -6,7 +6,7 @@ import com.trello.ui.core.BrowserFactory;
 import com.trello.ui.core.credentialsstorage.Credentials;
 import com.trello.ui.core.credentialsstorage.CredentialsStorage;
 import com.trello.ui.pages.BoardsPage;
-import com.trello.ui.pages.CardPage;
+import com.trello.ui.pages.CardPopupPage;
 import com.trello.ui.pages.LoginPage;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -23,7 +23,7 @@ public class CardActions extends BrowserFactory {
 
     public LoginPage loginPage = new LoginPage();
     public BoardsPage boardsPage = new BoardsPage();
-    public CardPage cardPage = new CardPage();
+    public CardPopupPage cardPopupPage = new CardPopupPage();
 
     Card card = new Card("Test_Card_" + new Date().getTime());
 
@@ -53,12 +53,12 @@ public class CardActions extends BrowserFactory {
 
     @Test
     public void openCard() {
-        cardPage.open("");
+        cardPopupPage.open("");
     }
 
     @Test
     public void moveCard() {
-        //   cardPage.moveToList(""):
+        //   cardPopupPage.moveToList(""):
 
     }
 

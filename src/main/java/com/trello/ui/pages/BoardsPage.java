@@ -21,8 +21,14 @@ public class BoardsPage extends TrelloBasePage {
         return new Elem(By.cssSelector(".board-tile[href*='" + urlName + "']"), urlName);
     }
 
-    public void openBoardByUrlName(String urlName) {
+    public BoardPage openBoardByUrlName(String urlName) {
         boardByUrlName(urlName).click();
+
+
+        BoardPage boardPage = new BoardPage();
+        if (!boardPage.isOpened())
+            return null;
+        return boardPage;
     }
 
     public void open() {
