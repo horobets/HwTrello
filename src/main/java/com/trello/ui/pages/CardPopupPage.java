@@ -18,10 +18,12 @@ public class CardPopupPage extends TrelloBasePage {
     public Elem getPowerUpsButton = new Elem(By.cssSelector(".js-get-pups"), "Get power-ups Button");
     //Actions
     public Elem moveCardButton = new Elem(By.cssSelector(".js-move-card"), "Move Card  Button");
+    //move popup
     public Elem boardNameSelect = new Elem(By.cssSelector(".js-select-board"), "Board Name Select");
     public Elem listNameSelect = new Elem(By.cssSelector(".js-select-list"), "List Name Select");
     public Elem positionSelect = new Elem(By.cssSelector(".js-select-position"), "Position Select");
     public Elem moveCardSubmitButton = new Elem(By.cssSelector(".js-submit"), "Move Card Submit button");
+    //
     public Elem copyCardButton = new Elem(By.cssSelector(".js-copy-card"), "Copy Card  Button");
     public Elem watchCardButton = new Elem(By.cssSelector(".js-subscribe"), "Watch Button");
     public Elem unwatchCardButton = new Elem(By.cssSelector(".js-unsubscribe"), "UnWatch Button");
