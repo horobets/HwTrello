@@ -1,25 +1,20 @@
-package main;
+package tasks;
 
 import com.trello.api.TrelloRestClient;
 import com.trello.api.models.Board;
 import com.trello.api.models.TrelloList;
 import com.trello.ui.core.BrowserFactory;
-import com.trello.ui.core.credentialsstorage.Credentials;
-import com.trello.ui.core.credentialsstorage.CredentialsStorage;
+import com.trello.ui.pages.BoardPage;
 import com.trello.ui.pages.BoardsPage;
-import com.trello.ui.pages.CardPage;
-import com.trello.ui.pages.LoginPage;
+import com.trello.ui.pages.CardPopupPage;
 import junk.TryLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import regression.LoginTest;
 
 import java.io.IOException;
 import java.util.Date;
-
-import static com.trello.ui.core.Constants.credentialsStorageFilePath;
 
 /**
  * Created by horobets on Jul 05, 2019
@@ -27,9 +22,9 @@ import static com.trello.ui.core.Constants.credentialsStorageFilePath;
 public class CardActionsTests extends BrowserFactory {
 
     public TrelloRestClient client = new TrelloRestClient();
-    public LoginPage loginPage = new LoginPage();
+    //public LoginPage loginPage = new LoginPage();
     public BoardsPage boardsPage = new BoardsPage();
-    public CardPage cardPage = new CardPage();
+    public CardPopupPage cardPopupPage = new CardPopupPage();
     private Logger logger = LoggerFactory.getLogger(TryLogger.class);
     private String testBoardId = "";
     private String testBoardName = String.format("Test Board - %s", new Date().getTime());
@@ -65,29 +60,20 @@ public class CardActionsTests extends BrowserFactory {
     public void login(@Optional("") String username,
                       @Optional("") String password) throws IOException {
 
-        //use credentialsstorage if no credentials provided
-        if (username.isEmpty() || password.isEmpty()) {
-            Credentials trelloCredentials = (new CredentialsStorage(credentialsStorageFilePath)).getLastCredentials();
-            username = trelloCredentials.getUsername();
-            password = trelloCredentials.getPassword();
-        }
+        new TrelloApiAuth().login(username, password);
 
-
-        new LoginTest().login(username, password);
-
-        //loginPage.login(username, password);
-
-        boardsPage.openBoardByUrlName("jacksparrowtitle");
+        boardsPage.openBoardByName(testBoardName);
+        Assert.assertTrue(new BoardPage().isOpened(), "Board Page not opened. Auth failed?");
     }
 
-    @Test
+    @Test(description = "Test trello open card", priority = 1)
     public void openCard() {
-        cardPage.open("");
+        cardPopupPage.open("");
     }
 
     @Test
     public void moveCard() {
-        //   cardPage.moveToList(""):
+        //   cardPopupPage.moveToList(""):
 
     }
 

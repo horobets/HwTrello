@@ -12,6 +12,7 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import org.openqa.selenium.Cookie;
+import org.testng.Assert;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -41,7 +42,7 @@ public class LoginTest extends BrowserFactory {
                       @Optional("") String password) throws IOException {
 
         //use credentialsstorage if no credentials provided
-        if (username.isEmpty() || password.isEmpty()) {
+        if (username.isEmpty() && password.isEmpty()) {
             Credentials trelloCredentials = (new CredentialsStorage(credentialsStorageFilePath)).getLastCredentials();
             username = trelloCredentials.getUsername();
             password = trelloCredentials.getPassword();
@@ -70,7 +71,8 @@ public class LoginTest extends BrowserFactory {
 
         driver().navigate().refresh();
 
-        boardsPage.openBoardByUrlName("jacksparrowtitle");
+        Assert.assertTrue(new BoardsPage().isOpened(), "Not a Boards page. Authentication failed?");
+        Assert.assertNotNull(boardsPage.openBoardByUrlName("jacksparrowtitle"), "Not a Board page");
     }
 
     @Step
