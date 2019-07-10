@@ -5,8 +5,12 @@ import org.openqa.selenium.By;
 
 public class CardPopupPage extends TrelloBasePage {
 
-    public Elem nameField = new Elem(By.cssSelector(".js-card-detail-title-input"), "Card Name Field");
-    public Elem descriptionField = new Elem(By.cssSelector(".description-fake-text-area"), "Card Description Field");
+    public Elem nameField = new Elem(By.cssSelector(".window .js-card-detail-title-input"), "Card Name Field");
+    //description
+    public Elem descriptionFakeField = new Elem(By.cssSelector(".window .description-fake-text-area"), "Card Description Fake Field");
+    public Elem descriptionField = new Elem(By.cssSelector(".window .js-description-draft"), "Card Description Field");
+    public Elem descriptionSaveButton = new Elem(By.cssSelector(".description-edit [type='submit']"), "Card Description Save Button");
+    //comment
     public Elem commentField = new Elem(By.cssSelector(".comment-box-input"), "Card Comment Field");
 
     //add to card
@@ -37,6 +41,12 @@ public class CardPopupPage extends TrelloBasePage {
     @Override
     public boolean isOpened() {
         return nameField.isPresent();
+    }
+
+    public void setDescription(String newDescription) {
+        descriptionFakeField.click();
+        descriptionField.type(newDescription);
+        descriptionSaveButton.click();
     }
 
     public void move(String listName) {

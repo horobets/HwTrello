@@ -2,6 +2,7 @@ package tasks;
 
 import com.trello.api.TrelloRestClient;
 import com.trello.api.models.Board;
+import com.trello.api.models.Card;
 import com.trello.api.models.TrelloList;
 import com.trello.ui.core.BrowserFactory;
 import com.trello.ui.pages.BoardPage;
@@ -24,6 +25,7 @@ public class CardActionsTests extends BrowserFactory {
     public TrelloRestClient client = new TrelloRestClient();
     //public LoginPage loginPage = new LoginPage();
     public BoardsPage boardsPage = new BoardsPage();
+    BoardPage boardPage = new BoardPage();
     public CardPopupPage cardPopupPage = new CardPopupPage();
     private Logger logger = LoggerFactory.getLogger(TryLogger.class);
     private String testBoardId = "";
@@ -46,6 +48,11 @@ public class CardActionsTests extends BrowserFactory {
         testListId = createdTrelloList.id;
         Assert.assertNotNull(createdTrelloList, "Created list was not found");
         Assert.assertEquals(createdTrelloList.name, testListName, "Invalid list was found");
+
+        Card createdTrelloCard = client.cardsService.createCard(testListId, new Card(testCardName)).execute().body();
+        testCardId = createdTrelloCard.id;
+        Assert.assertNotNull(createdTrelloCard, "Created card was not found");
+        Assert.assertEquals(createdTrelloCard.name, testCardName, "Invalid card was found");
     }
 
     @AfterClass
@@ -62,15 +69,22 @@ public class CardActionsTests extends BrowserFactory {
 
         new TrelloApiAuth().login(username, password);
 
-        boardsPage.openBoardByName(testBoardName);
-        Assert.assertTrue(new BoardPage().isOpened(), "Board Page not opened. Auth failed?");
+        Assert.assertTrue(new BoardsPage().isOpened(), "Boards Page not opened. Auth failed?");
     }
 
     @Test(description = "Test trello open card", priority = 1)
     public void openCard() {
-        cardPopupPage.open("");
+        CardPopupPage cardPopupPage = boardsPage.openBoardByName(testBoardName).openCard(testListName, testCardName);
+        Assert.assertTrue(cardPopupPage.isOpened(), "Card Popup not opened.");
     }
 
+    @Test(description = "Test trello change card description", priority = 2)
+    public void changeDescriptionCard() {
+        CardPopupPage cardPopupPage = new CardPopupPage();
+
+
+        // Assert.assertTrue(cardPopupPage.isOpened(), "Card Popup not opened.");
+    }
     @Test
     public void moveCard() {
         //   cardPopupPage.moveToList(""):

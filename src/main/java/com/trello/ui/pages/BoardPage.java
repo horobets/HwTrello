@@ -1,6 +1,8 @@
 package com.trello.ui.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
 
 /**
  * Created by horobets on Jun 20, 2019
@@ -13,6 +15,10 @@ public class BoardPage extends TrelloBasePage {
     private By visibilityMenuitemPublicBy = By.cssSelector(".pop-over-list [name='public']");
     private By visibilityMenuitemPrivateBy = By.cssSelector(".pop-over-list [name='private']");
     private By visibilityPublicConfirmationPopupButtonBy = By.cssSelector(".make-public-confirmation-button");
+
+    private String cardLinkXpathFormat = "//span[contains(@class, 'js-card-name') and contains(text(), '%s')]";
+    private String listHeaderXpathFormat = "//textarea[contains(@class, 'list-header-name') and contains(text(), '%s')]";
+    private String listBlockXpathFormat = "//div[@class='list js-list-content']//textarea[contains(@class, 'list-header-name') and contains(text(), '%s')]";
 
     /*public BoardPage(WebDriver driver) {
         super(driver);
@@ -69,5 +75,29 @@ public class BoardPage extends TrelloBasePage {
 
     public void openVisibilityMenu() {
         click(visibilityMenuButtonBy);
+    }
+
+    public CardPopupPage openCard(String listName, String cardName) {
+
+        WebElement listElement = find(By.xpath(String.format(listBlockXpathFormat, listName)));
+
+        WebElement cardElement = listElement.findElement(By.xpath(String.format(cardLinkXpathFormat, cardName)));
+        cardElement.click();
+
+        CardPopupPage cardPopupPage = new CardPopupPage();
+        if (!cardPopupPage.isOpened())
+            return null;
+        return cardPopupPage;
+    }
+
+    public CardPopupPage openCard(String cardName) {
+
+        WebElement cardElement = find(By.xpath(String.format(cardLinkXpathFormat, cardName)));
+        cardElement.click();
+
+        CardPopupPage cardPopupPage = new CardPopupPage();
+        if (!cardPopupPage.isOpened())
+            return null;
+        return cardPopupPage;
     }
 }
