@@ -26,7 +26,7 @@ public class BoardPage extends TrelloBasePage {
 
     @Override
     public boolean isOpened() {
-        return isElementPresent(boardEditingBy, 5);
+        return isElementPresent(boardEditingBy, 5) && isElementVisible(boardEditingBy, 5);
     }
 
 

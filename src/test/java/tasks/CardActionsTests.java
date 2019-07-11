@@ -16,6 +16,10 @@ import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import static org.awaitility.Awaitility.await;
 
 /**
  * Created by horobets on Jul 05, 2019
@@ -23,7 +27,6 @@ import java.util.Date;
 public class CardActionsTests extends BrowserFactory {
 
     public TrelloRestClient client = new TrelloRestClient();
-    //public LoginPage loginPage = new LoginPage();
     public BoardsPage boardsPage = new BoardsPage();
     BoardPage boardPage = new BoardPage();
     public CardPopupPage cardPopupPage = new CardPopupPage();
@@ -34,8 +37,6 @@ public class CardActionsTests extends BrowserFactory {
     private String testListName = String.format("Test List - %s", new Date().getTime());
     private String testCardId = "";
     private String testCardName = String.format("Test Card - %s", new Date().getTime());
-
-    //Card card = new Card("Test_Card_" + new Date().getTime());
 
     @BeforeClass
     public void prepareData() throws IOException {
@@ -62,8 +63,8 @@ public class CardActionsTests extends BrowserFactory {
         Assert.assertNull(board, "Deleted board still exists");
     }
 
-    @Parameters({"username", "password"})
     @Test(description = "Test trello api+cookies login")
+    @Parameters({"username", "password"})
     public void login(@Optional("") String username,
                       @Optional("") String password) throws IOException {
 
@@ -74,16 +75,40 @@ public class CardActionsTests extends BrowserFactory {
 
     @Test(description = "Test trello open card", priority = 1)
     public void openCard() {
-        CardPopupPage cardPopupPage = boardsPage.openBoardByName(testBoardName).openCard(testListName, testCardName);
+        BoardPage boardPage = boardsPage.openBoardByName(testBoardName);
+        CardPopupPage cardPopupPage = boardPage.openCard(testListName, testCardName);
         Assert.assertTrue(cardPopupPage.isOpened(), "Card Popup not opened.");
     }
 
     @Test(description = "Test trello change card description", priority = 2)
-    public void changeDescriptionCard() {
+    public void changeCardDescription() throws IOException {
         CardPopupPage cardPopupPage = new CardPopupPage();
 
+        String testBoardDescription = String.format("Test Card Description - %s", new Date().getTime());
+        cardPopupPage.setDescription(testBoardDescription);
 
-        // Assert.assertTrue(cardPopupPage.isOpened(), "Card Popup not opened.");
+        //check from UI
+        Assert.assertEquals(cardPopupPage.getDescription(), testBoardDescription, "Invalid description saved");
+
+        //check from API
+        Card card = client.cardsService.getCard(this.testCardId).execute().body();
+        Assert.assertEquals(card.desc, testBoardDescription, "Invalid description saved (API check)");
+    }
+
+    @Test(description = "Test trello add members", priority = 3)
+    @Parameters({"testMemberName"})
+    public void addCardMembers(@Optional("Serh") String testMemberName) throws IOException {
+        CardPopupPage cardPopupPage = new CardPopupPage();
+
+        cardPopupPage.addMember(testMemberName);
+
+        //check from UI
+        List<String> membersNames = cardPopupPage.getMembers();
+        Assert.assertTrue(membersNames.stream().anyMatch((s) -> s.startsWith(testMemberName)), "Added member was not found");
+
+        //check from API
+        //Card card = client.cardsService.getCard(this.testCardId).execute().body();
+        //Assert.assertEquals(card.idMembers.desc, testBoardDescription, "Invalid description saved (API check)");
     }
     @Test
     public void moveCard() {
@@ -91,9 +116,27 @@ public class CardActionsTests extends BrowserFactory {
 
     }
 
-    @Test
-    public void rename() {
+    @Test(description = "Test trello rename card", priority = 3)
+    @Parameters({"newCardName"})
+    public void rename(@Optional("") String newCardName) throws IOException {
 
+        if (newCardName.isEmpty())
+            newCardName = String.format("Test Renamed Card - %s", new Date().getTime());
+
+        CardPopupPage cardPopupPage = new CardPopupPage();
+        cardPopupPage.setName(newCardName);
+
+        testCardName = newCardName;
+
+        //check from UI
+        //Assert.assertEquals(cardPopupPage.getName(), newCardName, "Card is not renamed");
+
+        //check from API
+        await().atMost(5, TimeUnit.SECONDS)
+                .pollInterval(500, TimeUnit.MILLISECONDS)
+                .until(
+                        client.cardsService.getCard(this.testCardId).execute(), equals(newCardName))
+        );
     }
 
 

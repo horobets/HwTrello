@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 
+import java.util.List;
+
 import static com.trello.ui.core.BrowserFactory.driver;
 import static com.trello.ui.core.BrowserFactory.getWebDriverWait;
 import static java.time.Duration.ofMillis;
@@ -32,6 +34,10 @@ public class Elem {
 
     public WebElement find() {
         return getWebDriverWait(10).until(ExpectedConditions.presenceOfElementLocated(by));
+    }
+
+    public List<WebElement> findAll() {
+        return getWebDriverWait(10).until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
     }
 
     @Step
