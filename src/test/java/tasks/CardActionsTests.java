@@ -17,9 +17,8 @@ import org.testng.annotations.*;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-import static org.awaitility.Awaitility.await;
+import static org.testng.Assert.assertEquals;
 
 /**
  * Created by horobets on Jul 05, 2019
@@ -43,17 +42,17 @@ public class CardActionsTests extends BrowserFactory {
         Board createdBoard = client.boardsService.createBoard(testBoardName).execute().body();
         testBoardId = createdBoard.id;
         Assert.assertNotNull(createdBoard, "Created board not found");
-        Assert.assertEquals(createdBoard.name, testBoardName, "Invalid board was found");
+        assertEquals(createdBoard.name, testBoardName, "Invalid board was found");
 
         TrelloList createdTrelloList = client.listsService.createList(testBoardId, testListName).execute().body();
         testListId = createdTrelloList.id;
         Assert.assertNotNull(createdTrelloList, "Created list was not found");
-        Assert.assertEquals(createdTrelloList.name, testListName, "Invalid list was found");
+        assertEquals(createdTrelloList.name, testListName, "Invalid list was found");
 
         Card createdTrelloCard = client.cardsService.createCard(testListId, new Card(testCardName)).execute().body();
         testCardId = createdTrelloCard.id;
         Assert.assertNotNull(createdTrelloCard, "Created card was not found");
-        Assert.assertEquals(createdTrelloCard.name, testCardName, "Invalid card was found");
+        assertEquals(createdTrelloCard.name, testCardName, "Invalid card was found");
     }
 
     @AfterClass
@@ -88,11 +87,11 @@ public class CardActionsTests extends BrowserFactory {
         cardPopupPage.setDescription(testBoardDescription);
 
         //check from UI
-        Assert.assertEquals(cardPopupPage.getDescription(), testBoardDescription, "Invalid description saved");
+        assertEquals(cardPopupPage.getDescription(), testBoardDescription, "Invalid description saved");
 
         //check from API
         Card card = client.cardsService.getCard(this.testCardId).execute().body();
-        Assert.assertEquals(card.desc, testBoardDescription, "Invalid description saved (API check)");
+        assertEquals(card.desc, testBoardDescription, "Invalid description saved (API check)");
     }
 
     @Test(description = "Test trello add members", priority = 3)
@@ -102,13 +101,9 @@ public class CardActionsTests extends BrowserFactory {
 
         cardPopupPage.addMember(testMemberName);
 
-        //check from UI
+        //check
         List<String> membersNames = cardPopupPage.getMembers();
         Assert.assertTrue(membersNames.stream().anyMatch((s) -> s.startsWith(testMemberName)), "Added member was not found");
-
-        //check from API
-        //Card card = client.cardsService.getCard(this.testCardId).execute().body();
-        //Assert.assertEquals(card.idMembers.desc, testBoardDescription, "Invalid description saved (API check)");
     }
     @Test
     public void moveCard() {
@@ -129,14 +124,14 @@ public class CardActionsTests extends BrowserFactory {
         testCardName = newCardName;
 
         //check from UI
-        //Assert.assertEquals(cardPopupPage.getName(), newCardName, "Card is not renamed");
+        Assert.assertEquals(cardPopupPage.getName(), newCardName, "Card is not renamed");
 
         //check from API
-        await().atMost(5, TimeUnit.SECONDS)
+       /* await().atMost(5, TimeUnit.SECONDS)
                 .pollInterval(500, TimeUnit.MILLISECONDS)
-                .until(
-                        client.cardsService.getCard(this.testCardId).execute(), equals(newCardName))
-        );
+                .until(()->assertEquals(newCardName,
+                        client.cardsService.getCard(this.testCardId).execute().body().name)
+        );*/
     }
 
 

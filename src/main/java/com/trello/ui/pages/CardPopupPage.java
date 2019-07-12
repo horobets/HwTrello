@@ -54,6 +54,7 @@ public class CardPopupPage extends TrelloBasePage {
     }
 
     public String getName() {
+        String t = nameLabel.readText();
         return nameLabel.readText();
     }
 
