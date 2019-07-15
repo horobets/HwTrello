@@ -115,11 +115,11 @@ public class CardPopupPage extends TrelloBasePage {
     public List<LabelColor> getLabels() {
         List<LabelColor> labelColors = new ArrayList<>();
         labelsListItem.findAll().forEach(webElement -> {
-                    String elementClass = webElement.getAttribute("class");
-                    String classWithColor = RegexMatches.getRegexMatches(elementClass, "card-label-\\w+ ").get(0);
-                    String colorName = classWithColor.substring(11, classWithColor.length() - 1);
-                    labelColors.add(LabelColor.get(colorName));
-                }
+            String elementClass = webElement.getAttribute("class");
+            String classWithColor = RegexMatches.getRegexMatches(elementClass, "card-label-\\w+ ").get(0);
+            String colorName = classWithColor.substring(11, classWithColor.length() - 1);
+            labelColors.add(LabelColor.get(colorName));
+        }
         );
         return labelColors;
     }
