@@ -4,6 +4,7 @@ import com.trello.api.TrelloRestClient;
 import com.trello.api.models.Board;
 import com.trello.api.models.Card;
 import com.trello.api.models.TrelloList;
+import com.trello.api.services.LabelColor;
 import com.trello.ui.core.BrowserFactory;
 import com.trello.ui.pages.BoardPage;
 import com.trello.ui.pages.BoardsPage;
@@ -17,7 +18,9 @@ import org.testng.annotations.*;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
+import static org.awaitility.Awaitility.await;
 import static org.testng.Assert.assertEquals;
 
 /**
@@ -80,18 +83,25 @@ public class CardActionsTests extends BrowserFactory {
     }
 
     @Test(description = "Test trello change card description", priority = 2)
-    public void changeCardDescription() throws IOException {
+    @Parameters({"newCardDescription"})
+    public void changeCardDescription(@Optional("") String newCardDescription) throws IOException {
         CardPopupPage cardPopupPage = new CardPopupPage();
 
-        String testBoardDescription = String.format("Test Card Description - %s", new Date().getTime());
-        cardPopupPage.setDescription(testBoardDescription);
+        if (newCardDescription.isEmpty())
+            newCardDescription = String.format("Test Card Description - %s", new Date().getTime());
+
+        cardPopupPage.setDescription(newCardDescription);
+
+        //wait and check from API
+        final String cardDescription = newCardDescription;
+        await().atMost(5, TimeUnit.SECONDS)
+                .pollInterval(500, TimeUnit.MILLISECONDS)
+                .until(() -> cardDescription.equals(
+                        client.cardsService.getCard(this.testCardId).execute().body().desc)
+                );
 
         //check from UI
-        assertEquals(cardPopupPage.getDescription(), testBoardDescription, "Invalid description saved");
-
-        //check from API
-        Card card = client.cardsService.getCard(this.testCardId).execute().body();
-        assertEquals(card.desc, testBoardDescription, "Invalid description saved (API check)");
+        assertEquals(cardPopupPage.getDescription(), newCardDescription, "Invalid description saved");
     }
 
     @Test(description = "Test trello add members", priority = 3)
@@ -113,7 +123,7 @@ public class CardActionsTests extends BrowserFactory {
 
     @Test(description = "Test trello rename card", priority = 3)
     @Parameters({"newCardName"})
-    public void rename(@Optional("") String newCardName) throws IOException {
+    public void rename(@Optional("") String newCardName) throws NullPointerException {
 
         if (newCardName.isEmpty())
             newCardName = String.format("Test Renamed Card - %s", new Date().getTime());
@@ -121,18 +131,40 @@ public class CardActionsTests extends BrowserFactory {
         CardPopupPage cardPopupPage = new CardPopupPage();
         cardPopupPage.setName(newCardName);
 
-        testCardName = newCardName;
+        //wait and check from API
+        final String cardName = newCardName;
+        await().atMost(5, TimeUnit.SECONDS)
+                .pollInterval(500, TimeUnit.MILLISECONDS)
+                .until(() -> cardName.equals(
+                        client.cardsService.getCard(this.testCardId).execute().body().name)
+                );
 
         //check from UI
         Assert.assertEquals(cardPopupPage.getName(), newCardName, "Card is not renamed");
 
-        //check from API
-       /* await().atMost(5, TimeUnit.SECONDS)
-                .pollInterval(500, TimeUnit.MILLISECONDS)
-                .until(()->assertEquals(newCardName,
-                        client.cardsService.getCard(this.testCardId).execute().body().name)
-        );*/
+        testCardName = newCardName;
     }
+
+    @Test(description = "Test trello add card label", priority = 3)
+    @Parameters({"testLabelColor"})
+    public void addCardLabel(@Optional("BLUE") LabelColor testLabelColor) throws IOException {
+        CardPopupPage cardPopupPage = new CardPopupPage();
+
+        cardPopupPage.addLabel(testLabelColor);
+
+        //check on UI
+        List<LabelColor> labelColors = cardPopupPage.getLabels();
+        Assert.assertTrue(labelColors.stream().anyMatch((s) -> s.toString().startsWith(testLabelColor.toString())), "Added label was not found");
+
+        //wait and check from API
+        final LabelColor labelColor = testLabelColor;
+        await().atMost(5, TimeUnit.SECONDS)
+                .pollInterval(500, TimeUnit.MILLISECONDS)
+                .until(() -> labelColor.toString().equals(
+                        client.cardsService.getCard(this.testCardId).execute().body().labels[0].color)
+                );
+    }
+
 
 
 }

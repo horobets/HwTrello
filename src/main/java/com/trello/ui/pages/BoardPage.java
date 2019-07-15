@@ -1,5 +1,6 @@
 package com.trello.ui.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -30,6 +31,7 @@ public class BoardPage extends TrelloBasePage {
     }
 
 
+    @Step
     public void deleteBoard() {
 
         openMenu();
@@ -50,15 +52,18 @@ public class BoardPage extends TrelloBasePage {
         return new BoardMenuPage().isOpened();
     }
 
+    @Step
     public void openMenu() {
         if (!isMenuOpened())
             click(openMenuLinkBy);
     }
 
+    @Step
     public void clickStar() {
         click(iconStarBy);
     }
 
+    @Step
     public void changeVisibility(BoardVisibility boardVisibility) {
 
         openVisibilityMenu();
@@ -73,15 +78,19 @@ public class BoardPage extends TrelloBasePage {
         }
     }
 
+    @Step
     public void openVisibilityMenu() {
         click(visibilityMenuButtonBy);
     }
 
+    @Step
     public CardPopupPage openCard(String listName, String cardName) {
 
         WebElement listElement = find(By.xpath(String.format(listBlockXpathFormat, listName)));
 
         WebElement cardElement = listElement.findElement(By.xpath(String.format(cardLinkXpathFormat, cardName)));
+
+        cardElement.isDisplayed();
         cardElement.click();
 
         CardPopupPage cardPopupPage = new CardPopupPage();
@@ -90,6 +99,7 @@ public class BoardPage extends TrelloBasePage {
         return cardPopupPage;
     }
 
+    @Step
     public CardPopupPage openCard(String cardName) {
 
         WebElement cardElement = find(By.xpath(String.format(cardLinkXpathFormat, cardName)));

@@ -7,13 +7,13 @@ public class Label {
     public String id;
     public String idBoard;
     public String name;
-    public LabelColor color;
+    public String color;
 
     public Label() {
     }
 
     public Label(LabelColor color) {
-        this.color = color;
+        this.color = color.toString();
     }
 
 }

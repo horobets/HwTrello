@@ -27,10 +27,17 @@ public class Elem {
         this.name = name;
     }
 
+    public By getBy() {
+        return by;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     public Elem(By by) {
         this(by, "");
     }
-
 
     public WebElement find() {
         return getWebDriverWait(10).until(ExpectedConditions.presenceOfElementLocated(by));
@@ -49,6 +56,7 @@ public class Elem {
     public void type(String text) {
         find().clear();
         find().sendKeys(text);
+        find().sendKeys(Keys.TAB);
     }
 
     public boolean isPresent() {
@@ -74,15 +82,18 @@ public class Elem {
         }
     }
 
+    @Step
     public String readText() {
         return find().getText();
     }
 
+    @Step
     public void selectItem(String itemText) {
         Select dropdown = new Select(find());
         dropdown.selectByVisibleText(itemText);
     }
 
+    @Step
     public void selectItem(int itemIndex) {
         Select dropdown = new Select(find());
         dropdown.selectByIndex(itemIndex);
