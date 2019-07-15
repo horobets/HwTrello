@@ -1,34 +1,32 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<!--<suite name="Trello">
+<suite name="Trello">
     <test name="Login">
         <classes>
             <class name="tasks.CardActionsTests"></class>
         </classes>
     </test>
-</suite>-->
+</suite>
 
 <!--<suite name="Trello Suite" parallel="tests">-->
 
-        <suite name="Trello Gs Suite">
-            <test name="Login">
-                <classes>
-                    <class name="regression.legacy.LoginTests">
-                        <methods>
-                            <exclude name="logout"></exclude>
-                        </methods>
-                    </class>
-                </classes>
-            </test>
-            <test name="Create And Delete Board">
-                <classes>
-                    <class name="regression.legacy.CreateDeleteBoardTest">
-                        <methods>
-                            <exclude name="createBoard"></exclude>
-                            <exclude name="deleteBoard"></exclude>
-                        </methods>
-                    </class>
-                </classes>
-            </test>
+        <!--        <suite name="Trello Gs Suite">
+                    <test name="Login">
+                        <classes>
+                            <class name="regression.legacy.LoginTests">
+                                <methods>
+                                    <exclude name="logout"></exclude>
+                                </methods>
+                            </class>
+                        </classes>
+                    </test>
+                    <test name="Create And Delete Board">
+                        <classes>
+                            <class name="regression.legacy.CreateDeleteBoardTest">
+                                <methods>
+                                </methods>
+                            </class>
+                        </classes>
+                    </test>-->
 
     <!--
     <test name="Add to favorites and remove">
@@ -51,5 +49,5 @@
                 </class>
             </classes>
         </test>
-        -->
-</suite>
+
+</suite>-->

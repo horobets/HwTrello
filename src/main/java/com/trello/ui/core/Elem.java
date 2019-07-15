@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 
+import java.util.List;
+
 import static com.trello.ui.core.BrowserFactory.driver;
 import static com.trello.ui.core.BrowserFactory.getWebDriverWait;
 import static java.time.Duration.ofMillis;
@@ -25,13 +27,24 @@ public class Elem {
         this.name = name;
     }
 
+    public By getBy() {
+        return by;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     public Elem(By by) {
         this(by, "");
     }
 
-
     public WebElement find() {
         return getWebDriverWait(10).until(ExpectedConditions.presenceOfElementLocated(by));
+    }
+
+    public List<WebElement> findAll() {
+        return getWebDriverWait(10).until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
     }
 
     @Step
@@ -43,6 +56,7 @@ public class Elem {
     public void type(String text) {
         find().clear();
         find().sendKeys(text);
+        find().sendKeys(Keys.TAB);
     }
 
     public boolean isPresent() {
@@ -68,15 +82,18 @@ public class Elem {
         }
     }
 
+    @Step
     public String readText() {
         return find().getText();
     }
 
+    @Step
     public void selectItem(String itemText) {
         Select dropdown = new Select(find());
         dropdown.selectByVisibleText(itemText);
     }
 
+    @Step
     public void selectItem(int itemIndex) {
         Select dropdown = new Select(find());
         dropdown.selectByIndex(itemIndex);
