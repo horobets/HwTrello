@@ -6,6 +6,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+//Дан список студентов. Элемент списка содержит фамилию, имя, отчество, год рождения, курс, номер группы,
+// оценки по пяти предметам. Упорядочите студентов по курсу, причем студенты одного курса располагались
+// в алфавитном порядке. Найдите средний балл каждой группы по каждому предмету. Определите самого старшего
+// студента и самого младшего студентов. Для каждой группы найдите лучшего с точки зрения успеваемости студента.
+
 public class StudentDemo {
     public static void main(String[] args) {
 
@@ -17,17 +22,31 @@ public class StudentDemo {
         studentList.add(new Student("Elbers", "Jacob", "W", 1986, 4, Group.GROUP2, getSampleMarks()));
         studentList.add(new Student("Jim", "Ci", "F", 1989, 3, Group.GROUP1, getSampleMarks()));
         studentList.add(new Student("Donald", "Lee", "F", 1985, 1, Group.GROUP2, getSampleMarks()));
-        studentList.add(new Student("Ron", "Alber", "A", 1980, 3, Group.GROUP3, getSampleMarks()));
+        studentList.add(new Student("Ron", "Elder", "A", 1980, 3, Group.GROUP3, getSampleMarks()));
 
 
         //sort by YearInCollege and names
+        System.out.println("Sorted by YearInCollege and Names:");
         studentList.sort(new StudentNamesComparator());
         studentList.sort(new StudentYearInCollegeComparator());
 
-        studentList.forEach(s -> System.out.println(s.getLastName() + " " + s.getYearInCollege()));
+        studentList.forEach(s -> System.out.printf("%d - %s %n", s.getYearInCollege(), s.getLastName()));
+
+
+        //average mark per subject in every group
+        System.out.println("Group Average Marks:");
+        for (Group group : Group.values()) {
+            List<Student> studentsFromGroup = getStudentsFromGroup(studentList, group);
+            System.out.printf("%nGroup %s average marks:", group);
+            for (Subject subject : Subject.values()) {
+                int avgMark = getAveragemarkForSubject(studentsFromGroup, subject);
+                System.out.printf("%nSubject %s average mark: %d", subject, avgMark);
+            }
+        }
 
 
         // youngest and oldest student
+        System.out.println("\n\nYoungest and oldest students:");
         Student youngestStudent = studentList.get(0);
         Student oldestStudent = studentList.get(0);
         for (Student s : studentList) {
@@ -51,6 +70,15 @@ public class StudentDemo {
             }
             System.out.printf("%nBest Student in group %s: %s ", group, bestStudentInGroup.toString());
         }
+    }
+
+    public static int getAveragemarkForSubject(List<Student> studentList, Subject subject) {
+
+        int marksSum = 0;
+        for (Student student : studentList) {
+            marksSum += student.getMarks().get(subject);
+        }
+        return marksSum / studentList.size();
     }
 
     public static List<Student> getStudentsFromGroup(List<Student> studentList, Group group) {
