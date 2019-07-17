@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum Subject {
-    Art("Art"),
+    ART("Art"),
     MUSIC("Music"),
     MATHEMATICS("Mathematics"),
     LEADERSHIP("Leadership"),
@@ -13,8 +13,8 @@ public enum Subject {
     private static final Map<String, Subject> lookup = new HashMap<>();
 
     static {
-        for (Subject sbject : Subject.values()) {
-            lookup.put(sbject.toString(), sbject);
+        for (Subject subject : Subject.values()) {
+            lookup.put(subject.toString(), subject);
         }
     }
 
