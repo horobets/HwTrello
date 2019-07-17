@@ -15,7 +15,7 @@
             <class name="exam.trello.CreateBoardTest"></class>
         </classes>
     </test>
-    <test name="make board public / private">
+    <test name="Make Board Public / Private">
         <classes>
             <class name="exam.trello.ChangeVisibilityTest"></class>
         </classes>
