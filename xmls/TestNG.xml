@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Trello Exam Test Suite">
+    <test name="Login">
+        <classes>
+            <class name="exam.trello.LoginTest"></class>
+        </classes>
+    </test>
+    <test name="Logout">
+        <classes>
+            <class name="exam.trello.LogoutTest"></class>
+        </classes>
+    </test>
+    <test name="Create Board">
+        <classes>
+            <class name="exam.trello.CreateBoardTest"></class>
+        </classes>
+    </test>
+    <test name="make board public / private">
+        <classes>
+            <class name="exam.trello.ChangeVisibilityTest"></class>
+        </classes>
+    </test>
+    <test name="Delete Board">
+        <classes>
+            <class name="exam.trello.DeleteBoardTest"></class>
+        </classes>
+    </test>
+</suite>

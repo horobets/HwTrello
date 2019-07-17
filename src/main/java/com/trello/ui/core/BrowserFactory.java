@@ -1,5 +1,6 @@
 package com.trello.ui.core;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -10,7 +11,9 @@ import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 /**
  * Created by horobets on Jun 20, 2019
@@ -56,6 +59,13 @@ public class BrowserFactory {
 
 
         driver = new EventFiringWebDriver(driver).register(new DriverEventListener());
+    }
+
+    protected WebDriver switchToNewWindow() {
+        ((JavascriptExecutor) driver).executeScript("window.open('about:blank','_blank');");
+        List<String> windowHandles = new ArrayList<>(driver.getWindowHandles());
+        String newWindowHandle = windowHandles.get(windowHandles.size() - 1);//last windowhandle should be the new window
+        return driver.switchTo().window(newWindowHandle);
     }
 
     @AfterSuite

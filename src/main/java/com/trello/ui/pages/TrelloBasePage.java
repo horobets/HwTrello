@@ -11,30 +11,26 @@ import static com.trello.ui.core.BrowserFactory.driver;
 public abstract class TrelloBasePage extends BasePage {
 
 
-    private By userButtonBy = By.cssSelector(".member");
-    private By logoutMenuitemBy = By.cssSelector(".js-logout");
+    private By userButtonBy = By.cssSelector("button.js-open-header-member-menu");
+    private By logoutMenuitemBy = By.cssSelector("[data-test-id='header-member-menu-logout']");
     private By boardsButton = By.cssSelector("[data-test-id='header-boards-menu-button']");
     private By homeButton = By.cssSelector("[name='house']");
 
-    /*public TrelloBasePage(WebDriver driver) {
-        super(driver);
-    }*/
-
-
     public void logOut() {
-        isElementPresent(userButtonBy, 5);
+        isElementVisible(userButtonBy, 5);
         click(userButtonBy);
 
-        isElementPresent(logoutMenuitemBy, 5);
+        isElementVisible(logoutMenuitemBy, 5);
         click(logoutMenuitemBy);
 
         new WebDriverWait(driver(), 10).until(ExpectedConditions.urlToBe("https://trello.com/logged-out"));
     }
 
     public BoardsPage openBoardsPage() {
-        isElementPresent(homeButton, 5);
+        isElementVisible(homeButton, 5);
         click(homeButton);
-        BoardsPage boardsPage = new BoardsPage(/*driver*/);
+        click(homeButton);
+        BoardsPage boardsPage = new BoardsPage();
         boardsPage.isOpened();
         return boardsPage;
     }

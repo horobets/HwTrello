@@ -5,9 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 
-/**
- * Created by horobets on Jun 20, 2019
- */
 public class BoardPage extends TrelloBasePage {
     private By boardEditingBy = By.cssSelector(".js-board-editing-target");
     private By openMenuLinkBy = By.cssSelector(".js-show-sidebar");
@@ -21,9 +18,6 @@ public class BoardPage extends TrelloBasePage {
     private String listHeaderXpathFormat = "//textarea[contains(@class, 'list-header-name') and contains(text(), '%s')]";
     private String listBlockXpathFormat = "//div[@class='list js-list-content']//textarea[contains(@class, 'list-header-name') and contains(text(), '%s')]";
 
-    /*public BoardPage(WebDriver driver) {
-        super(driver);
-    }*/
 
     @Override
     public boolean isOpened() {
@@ -45,7 +39,6 @@ public class BoardPage extends TrelloBasePage {
         boardMenuPage.clickConfirm();
 
         isElementPresent(By.cssSelector(".little-message"), 5);
-
     }
 
     public boolean isMenuOpened() {
