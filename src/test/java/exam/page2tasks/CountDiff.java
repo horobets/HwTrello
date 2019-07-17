@@ -8,7 +8,7 @@ public class CountDiff {
 
         int[] arr = new int[]{1, 4, 5, 1, 1, 3};
         int count = countDiff(arr);
-        System.out.printf("количество различных элементов массива: %d", count);
+        System.out.printf("Количество различных элементов массива: %d", count);
 
         Assert.assertEquals(count, 4);
     }

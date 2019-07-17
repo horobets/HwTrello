@@ -3,21 +3,21 @@ package exam.page2tasks;
 import java.util.ArrayList;
 import java.util.List;
 
-//Дан массив названий переменных в camelCase. Преобразовать названия в snake_case. пример массива [myAwsomePhrase, iLoveJustinBieber, captainJackSparrow]
+//Дан массив названий переменных в camelCase. Преобразовать названия в snake_case.
+//пример массива [myAwsomePhrase, iLoveJustinBieber, captainJackSparrow]
 public class CaseConvert {
     public static void main(String[] args) {
 
         String[] camelStrings = new String[]{"myAwsomePhrase", "iLoveJustinBieber", "captainJackSparrow"};
 
-        String[] snakeStrings = ConvertToSnakeCase(camelStrings);
+        String[] snakeStrings = convertToSnakeCase(camelStrings);
 
         for (String snakeString : snakeStrings) {
             System.out.println(snakeString);
         }
-
     }
 
-    public static String[] ConvertToSnakeCase(String[] camelStrings) {
+    public static String[] convertToSnakeCase(String[] camelStrings) {
 
         List<String> snakeStrings = new ArrayList<>();
 
