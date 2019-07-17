@@ -8,7 +8,7 @@ public class Student {
     private String familyName;
     private int birthYear;
     private int yearInCollege;
-    private long groupId;
+    private Group group;
     private HashMap<Subject, Integer> marks;
 
     public String getFirstName() {
@@ -51,12 +51,14 @@ public class Student {
         this.yearInCollege = yearInCollege;
     }
 
-    public long getGroupId() {
-        return groupId;
+    public Student() {
     }
 
-    public void setGroupId(long groupId) {
-        this.groupId = groupId;
+    public Student(String firstName, String lastName, String familyName, int birthYear) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.familyName = familyName;
+        this.birthYear = birthYear;
     }
 
     public HashMap<Subject, Integer> getMarks() {
@@ -65,5 +67,23 @@ public class Student {
 
     public void setMarks(HashMap<Subject, Integer> marks) {
         this.marks = marks;
+    }
+
+    public Student(String firstName, String lastName, String familyName, int birthYear, int yearInCollege, Group group, HashMap<Subject, Integer> marks) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.familyName = familyName;
+        this.birthYear = birthYear;
+        this.yearInCollege = yearInCollege;
+        this.group = group;
+        this.marks = marks;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
     }
 }
