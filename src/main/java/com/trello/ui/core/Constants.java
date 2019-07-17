@@ -6,6 +6,6 @@ package com.trello.ui.core;
 public class Constants {
     public static final String URL = "https://trello.com/";
     public static final String credentialsStorageFilePath = "c:\\credentials\\trellocredentials.txt";
-    public static final String USERNAME = "testusername@example.com";
-    public static final String PASSWORD = "TestPassword";
+    public static final String USERNAME = "mml20244@bcaoo.com";
+    public static final String PASSWORD = "TestPasswordExam2019!";
 }
