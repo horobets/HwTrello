@@ -1,6 +1,7 @@
 package exam.page2tasks.students;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Student {
     private String firstName;
@@ -51,6 +52,19 @@ public class Student {
         this.yearInCollege = yearInCollege;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" + firstName + '\'' + lastName + '\'' + familyName + '\'' + birthYear + yearInCollege + group + marks +
+                '}';
+    }
+
+    public double getAverageMark() {
+        long marksSum = 0;
+        for (Map.Entry<Subject, Integer> entry : marks.entrySet()) {
+            marksSum += entry.getValue();
+        }
+        return marksSum / marks.size();
+    }
     public Student() {
     }
 
