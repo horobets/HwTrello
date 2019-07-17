@@ -7,13 +7,13 @@ public class CountDiff {
     public static void main(String[] args) {
 
         int[] arr = new int[]{1, 4, 5, 1, 1, 3};
-        int count = countUniqIntems(arr);
+        int count = countUniqItems(arr);
         System.out.printf("Количество различных элементов массива: %d", count);
 
         Assert.assertEquals(count, 4);
     }
 
-    public static int countUniqIntems(int[] arr) {
+    public static int countUniqItems(int[] arr) {
 
         int uniqCount = 0;
 
