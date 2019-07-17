@@ -3,12 +3,7 @@ package com.trello.ui.pages;
 import com.trello.ui.core.Elem;
 import org.openqa.selenium.By;
 
-/**
- * Created by horobets on Jun 20, 2019
- */
 public class BoardsPage extends TrelloBasePage {
-
-    private static final String PATH = "serhiihorobets/boards";
 
     public Elem createNewBoardBtn = new Elem(By.cssSelector(".mod-add"), "createNewBoard button");
     public Elem boardTitleFld = new Elem(By.cssSelector(".subtle-input"), "boardTitleFld field");
@@ -31,21 +26,15 @@ public class BoardsPage extends TrelloBasePage {
         return boardPage;
     }
 
-    public void open() {
-
-    }
-
     public boolean isOpened() {
 
-        //return isElementPresent(createNewBoardBtn, 5);
-        return createNewBoardBtn.isPresent();
+        return createNewBoardBtn.isPresent() && createNewBoardBtn.isVisible();
     }
 
     public BoardPage createBoard(String name) {
         createNewBoardBtn.click();
         boardTitleFld.type(name);
         createBoardBtn.click();
-        ;
 
         BoardPage boardPage = new BoardPage();
         boardPage.isOpened();
@@ -70,7 +59,4 @@ public class BoardsPage extends TrelloBasePage {
 
         return isElementPresent(By.xpath(String.format(boardListItemXpathFormat, name)), 3);
     }
-
-
-
 }

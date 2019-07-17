@@ -9,16 +9,15 @@ import org.testng.Assert;
 import static com.trello.ui.core.BrowserFactory.driver;
 import static com.trello.ui.core.BrowserFactory.get;
 
-/**
- * Created by horobets on Jun 20, 2019
- */
+
 public class LoginPage extends TrelloBasePage {
 
     private static final String PATH = "login";
 
-    public Elem emailFld = new Elem(By.cssSelector("#user"), "Login Field");
-    public Elem passFld = new Elem(By.cssSelector("#password"), "Password Field");
-    public Elem loginBtn = new Elem(By.cssSelector("#login"), "Login Button");
+    private Elem emailFld = new Elem(By.cssSelector("#user"), "Login Field");
+    private Elem passFld = new Elem(By.cssSelector("#password"), "Password Field");
+    private Elem loginBtn = new Elem(By.cssSelector("#login"), "Login Button");
+    private Elem errorMessage = new Elem(By.cssSelector("p.error-message"), "Error Message");
 
     @Step("Open Page: " + PATH)
     public void open() {
@@ -38,5 +37,7 @@ public class LoginPage extends TrelloBasePage {
         loginBtn.click();
     }
 
-
+    public boolean isErrorMessageDisplayed() {
+        return errorMessage.isVisible();
+    }
 }

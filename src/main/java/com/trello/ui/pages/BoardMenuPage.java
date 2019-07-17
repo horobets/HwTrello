@@ -10,9 +10,6 @@ public class BoardMenuPage extends TrelloBasePage {
     private By deleteLink = By.cssSelector(".js-delete");
     private By menuConfirm = By.cssSelector(".js-confirm");
 
-    /*public BoardMenuPage(WebDriver driver) {
-        super(driver);
-    }*/
 
     @Override
     public boolean isOpened() {
