@@ -19,11 +19,15 @@ public class StudentDemo {
         studentList.add(new Student("Donald", "Lee", "F", 1985, 1, Group.GROUP2, getSampleMarks()));
         studentList.add(new Student("Ron", "Alber", "A", 1980, 3, Group.GROUP3, getSampleMarks()));
 
+
+        //sort by YearInCollege and names
         studentList.sort(new StudentNamesComparator());
         studentList.sort(new StudentYearInCollegeComparator());
 
         studentList.forEach(s -> System.out.println(s.getLastName() + " " + s.getYearInCollege()));
 
+
+        // youngest and oldest student
         Student youngestStudent = studentList.get(0);
         Student oldestStudent = studentList.get(0);
         for (Student s : studentList) {
@@ -36,11 +40,29 @@ public class StudentDemo {
         System.out.println("Oldest: " + oldestStudent.getLastName() + " " + oldestStudent.getBirthYear());
 
 
+        //best student in every group
         for (Group group : Group.values()) {
-
+            List<Student> studentsFromGroup = getStudentsFromGroup(studentList, group);
+            Student bestStudentInGroup = studentsFromGroup.get(0);
+            for (Student student : studentsFromGroup) {
+                if (student.getAverageMark() > bestStudentInGroup.getAverageMark()) {
+                    bestStudentInGroup = student;
+                }
+            }
+            System.out.printf("%nBest Student in group %s: %s ", group, bestStudentInGroup.toString());
         }
     }
 
+    public static List<Student> getStudentsFromGroup(List<Student> studentList, Group group) {
+
+        List<Student> studentListFromGroup = new ArrayList<>();
+        for (Student student : studentList) {
+            if (student.getGroup().equals(group)) {
+                studentListFromGroup.add(student);
+            }
+        }
+        return studentListFromGroup;
+    }
 
     public static HashMap<Subject, Integer> getSampleMarks() {
 
